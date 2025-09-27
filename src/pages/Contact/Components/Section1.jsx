@@ -31,9 +31,7 @@ export default function Section1() {
         </div>
         <img src="/Contact-Us.svg" alt="" className='hidden md:block'/>
         </div>
-
         {/* Right side - form*/}
-
         <div className="md:col-span-2 space-y-8">
           <div className="space-y-3">
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">
@@ -50,7 +48,7 @@ export default function Section1() {
             <input
               type="text"
               placeholder="Jason Dawson"
-              className="w-full border-b-2 border-gray-300 focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
+              className="w-full shadow-md rounded-lg focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
             />
           </div>
 
@@ -60,7 +58,7 @@ export default function Section1() {
             <input
               type="text"
               placeholder="1234567890"
-              className="w-full border-b-2 border-gray-300 focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
+              className="w-full shadow-md rounded-lg focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
             />
           </div>
           {/* Email */}
@@ -69,7 +67,7 @@ export default function Section1() {
             <input
               type="email"
               placeholder="example@gmail.com"
-              className="w-full border-b-2 border-gray-300 focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
+              className="w-full shadow-md rounded-lg focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
             />
           </div>
 
@@ -79,7 +77,7 @@ export default function Section1() {
             <textarea
               type="text"
               placeholder="Share your thoughts here..."
-              className="w-full border-b-2 border-gray-300 focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
+              className="w-full shadow-md rounded-lg focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
             />
           </div>
 
@@ -88,7 +86,6 @@ export default function Section1() {
             Submit
           </button>
         </div>
-       
       </div>
     </div>
   )

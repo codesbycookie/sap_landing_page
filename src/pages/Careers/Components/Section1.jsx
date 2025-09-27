@@ -22,7 +22,7 @@ export default function Section1() {
             <input
               type="text"
               placeholder="Jason Dawson"
-              className="w-full border-b-2 border-gray-300 focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
+              className="w-full shadow-md rounded-lg focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
             />
           </div>
 
@@ -32,7 +32,7 @@ export default function Section1() {
             <input
               type="text"
               placeholder="1234567890"
-              className="w-full border-b-2 border-gray-300 focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
+              className="w-full shadow-md rounded-lg focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
             />
           </div>
 
@@ -40,7 +40,7 @@ export default function Section1() {
           <div className="space-y-2">
             <label className="block font-semibold text-gray-700">Select Job Field</label>
             <select
-              className="w-full border-b-2 border-gray-300 focus:border-green-500 transition-colors duration-300 rounded-t-md px-3 py-3 bg-gray-50 focus:bg-white text-gray-700 outline-none appearance-none"
+              className="w-full shadow-md rounded-lg focus:border-green-500 transition-colors duration-300 rounded-t-md px-3 py-3 bg-gray-50 focus:bg-white text-gray-700 outline-none appearance-none"
             >
               <option value="Teaching">Teaching</option>
               <option value="Non-Teaching">Non-Teaching</option>
@@ -55,7 +55,7 @@ export default function Section1() {
             <input
               type="text"
               placeholder="Enter your years of experience"
-              className="w-full border-b-2 border-gray-300 focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
+              className="w-full shadow-md rounded-lg focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
             />
           </div>
           {/* Resume */}
@@ -64,7 +64,7 @@ export default function Section1() {
             <input
               type="file"
               placeholder="Enter your years of experience"
-              className="w-full border-b-2 border-gray-300 focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
+              className="w-full shadow-md rounded-lg focus:border-green-500 transition-colors duration-300 rounded-t-md p-3 outline-none bg-gray-50 focus:bg-white"
             />
           </div>
 
