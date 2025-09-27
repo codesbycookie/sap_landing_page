@@ -5,6 +5,7 @@ import Contact from '../pages/Contact/Contact'
 import Gallery from '../pages/Gallery/Gallery'
 import Courses from '../pages/Courses/Courses'
 import Blogs from '../pages/Blogs/Blogs'
+import Careers from '../pages/Careers/Careers'
 
 export default function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ export default function AppRoutes() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
     </>
   )
