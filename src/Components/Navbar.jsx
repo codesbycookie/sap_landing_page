@@ -24,7 +24,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', to: '/' },
     { name: 'About', to: '/about' },
-    { name: 'Courses', to: '/courses' },
+    { name: 'Life at SAP', to: '/gallery' },
     { name: 'Careers', to: '/careers' },
     { name: 'Blog', to: '/blogs' },
     { name: 'Contact', to: '/contact' },
