@@ -42,11 +42,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">L</span>
-              </div>
-              <span className="text-xl font-bold text-gray-800">Lumina</span>
+            <Link to="/" className="text-xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
+                Sampath Academy
             </Link>
           </div>
 
@@ -57,10 +54,10 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.to}
-                  className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
+                  className="text-gray-600 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}
             </div>
@@ -70,9 +67,9 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Link
               to="/contact"
-              className="ml-8 px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg"
+              className="ml-8 px-4 py-2 rounded-md bg-gradient-to-r from-green-500 to-green-600 text-white font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              Get Started
+              Admission
             </Link>
           </div>
 
@@ -80,7 +77,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-600 hover:text-blue-600 focus:outline-none focus:text-blue-600 p-2"
+              className="text-gray-600 hover:text-green-600 focus:outline-none focus:text-green-600 p-2"
               aria-label="Toggle menu"
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center">
@@ -116,7 +113,7 @@ const Navbar = () => {
                 key={item.name}
                 to={item.href}
                 onClick={handleLinkClick}
-                className="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors duration-200 border-l-4 border-transparent hover:border-blue-500 hover:bg-blue-50 rounded"
+                className="text-gray-600 hover:text-green-600 block px-3 py-2 text-base font-medium transition-colors duration-200 border-l-4 border-transparent hover:border-green-500 hover:bg-green-50 rounded"
               >
                 {item.name}
               </Link>
@@ -125,9 +122,9 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={handleLinkClick}
-                className="block w-full text-center px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-md"
+                className="block w-full text-center px-4 py-2 rounded-md bg-gradient-to-r from-green-500 to-green-600 text-white font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md"
               >
-                Get Started
+                Admission
               </Link>
             </div>
           </div>
