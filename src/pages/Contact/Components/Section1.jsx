@@ -3,8 +3,8 @@ import { IconBrandFacebook, IconBrandInstagram, IconBrandX, IconBrandYoutube } f
 
 export default function Section1() {
   return (
-    <div className='min-h-screen bg-gradient-to-br from-white to-green-50 flex items-center justify-center px-6'>
-      <div className="max-w-7xl w-full p-8 md:p-12 rounded-2xl bg-white shadow-xl grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-16">
+    <div className='min-h-[90vh] bg-gradient-to-br from-white to-green-50 flex items-center justify-center px-6'>
+      <div className="max-w-7xl w-full mt-5 p-8 md:p-12 rounded-2xl bg-white shadow-xl grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-16">
         {/* Left side - Contact Info */}
          <div className="flex flex-col justify-between">
           <div className="space-y-8">
