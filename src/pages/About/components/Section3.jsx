@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const Section3 = () => {
   const stories = [
@@ -24,207 +24,148 @@ const Section3 = () => {
     },
   ];
 
-  const extendedStories = [...stories, ...stories]; // Duplicate for seamless loop
+  const extendedStories = [...stories, ...stories]; // duplicate for smooth loop
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    // Inject keyframes via <style> tag
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes slide-right {
-        0% { transform: translateX(calc(-514px * 4 / 3)); }
-        100% { transform: translateX(0); }
-      }
-      @keyframes fade-in {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      @keyframes pulse-highlight {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-      }
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-      }
-      @keyframes shimmer {
-        0% { background-position: -200px 0; }
-        100% { background-position: 200px 0; }
-      }
-      .animate-slide-right {
-        animation: slide-right 40s linear infinite;
-      }
-      .animate-fade-in {
-        animation: fade-in 1s ease-out forwards;
-      }
-      .animate-pulse-highlight {
-        animation: pulse-highlight 3s ease-in-out infinite;
-      }
-      .animate-float {
-        animation: float 4s ease-in-out infinite;
-      }
-      .animate-shimmer {
-        animation: shimmer 2s linear infinite;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-        background-size: 200px 100%;
-      }
-      .timeline-card {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .timeline-card:hover {
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 25px 50px -12px rgba(111, 209, 24, 0.3);
-      }
-      .glow-effect {
-        position: relative;
-      }
-      .glow-effect::before {
-        content: '';
-        position: absolute;
-        top: -10px;
-        left: -10px;
-        right: -10px;
-        bottom: -10px;
-        background: radial-gradient(circle, rgba(111, 209, 24, 0.15) 0%, transparent 70%);
-        border-radius: 43px;
-        z-index: -1;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-      .glow-effect:hover::before {
-        opacity: 1;
-      }
-    `;
-    document.head.appendChild(style);
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % stories.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [stories.length]);
 
-    // Cleanup on unmount
-    return () => {
-      document.head.removeChild(style);
-    };
-  }, []);
+  const CARD_WIDTH_MOBILE = 320;
+  const CARD_WIDTH_TABLET = 400;
+  const CARD_WIDTH_DESKTOP = 514;
 
   return (
-    <section
-      className="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#F0FAE7] via-white to-[#E2F5D0] py-20 px-4 sm:px-6 md:px-8 relative overflow-hidden"
-    >
-      {/* Enhanced Background with Multiple Layers */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' viewBox=\\'0 0 1440 320\\'%3E%3Cpath fill=\\'none\\' stroke=\\'%236FD118\\' stroke-width=\\'2\\' opacity=\\'0.3\\' d=\\'M0,160 C360,320 1080,0 1440,160\\'/%3E%3C/svg%3E')] bg-no-repeat bg-bottom opacity-60 z-0" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#E2F5D0]/40 to-transparent z-10" />
-      
-      {/* Floating Background Elements */}
-      <div className="absolute top-20 left-10 w-6 h-6 bg-[#6FD118] rounded-full opacity-20 animate-float" />
-      <div className="absolute bottom-32 right-16 w-8 h-8 bg-[#8BC34A] rounded-full opacity-30 animate-float" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-40 right-20 w-4 h-4 bg-[#4CAF50] rounded-full opacity-40 animate-float" style={{ animationDelay: '2s' }} />
-
-      {/* Header Section */}
-      <div className="text-center max-w-4xl mx-auto mb-16 relative z-20">
-        <h2
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 text-center relative z-20 animate-fade-in"
-          style={{ animationDelay: "0.2s" }}
-        >
-          The Chapters We've
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#6FD118] to-[#4CAF50] mt-2">
+    <section className="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#F0FAE7] via-white to-[#E2F5D0] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+          The Chapters We've{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6FD118] to-[#4CAF50]">
             Reached So Far
           </span>
         </h2>
-        
-        <p 
-          className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed animate-fade-in"
-          style={{ animationDelay: "0.3s" }}
-        >
-          From humble beginnings to global recognition, discover the milestones that shaped our institution's legacy.
-        </p>
       </div>
 
-      {/* Enhanced Timeline Carousel */}
-      <div
-        className="relative w-full max-w-7xl h-[484px] overflow-hidden rounded-3xl shadow-2xl bg-white/60 backdrop-blur-md border border-[#6FD118]/20 glow-effect"
-        style={{ 
-          boxShadow: "0 25px 50px -12px rgba(111, 209, 24, 0.25)",
-          background: "linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(226,245,208,0.4) 100%)"
-        }}
-      >
-        <div
-          className="flex animate-slide-right"
-          style={{ width: "calc(514px * 8 / 3)" }}
-        >
-          {extendedStories.map((story, index) => (
+      {/* Mobile & Tablet Vertical Layout */}
+      <div className="flex lg:hidden flex-col items-center w-full max-w-2xl space-y-6 sm:space-y-8">
+        {stories.map((story, index) => (
+          <div
+            key={index}
+            className="w-full max-w-[400px] sm:max-w-[450px] p-4 sm:p-6"
+          >
             <div
-              key={index}
-              className="w-[514px] flex-shrink-0 p-4 flex items-center justify-center timeline-card group"
+              className="flex flex-col items-center justify-between w-full min-h-[300px] sm:min-h-[350px] p-6 sm:p-8 rounded-3xl transition-all duration-500"
               style={{
-                height: "484px",
-                opacity: index % 3 === 1 ? 1 : 0.5,
-                filter: index % 3 === 1 ? "none" : "blur(2px)",
-                transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                background: "linear-gradient(135deg, #E2F5D0 0%, #F0FAE7 100%)",
+                boxShadow: index === activeIndex
+                  ? "0 15px 40px rgba(111, 209, 24, 0.4)"
+                  : "0 6px 20px rgba(0, 0, 0, 0.1)",
+                opacity: index === activeIndex ? 1 : 0.7,
+                transform: index === activeIndex ? "scale(1.02)" : "scale(0.98)",
               }}
             >
+              <div className="flex flex-col sm:flex-row justify-between items-center w-full mb-4 sm:mb-6 gap-4 sm:gap-0">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center sm:text-left">
+                  {story.title}
+                </h3>
+                <div className="bg-white border-2 border-[#6FD118] text-[#6FD118] px-4 sm:px-6 py-2 rounded-full text-sm font-bold shadow-md">
+                  {story.year}
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="bg-white w-full flex-1 p-4 sm:p-6 rounded-2xl">
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-center sm:text-left">
+                  {story.desc}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop Carousel */}
+      <div className="hidden lg:flex relative w-full max-w-7xl h-[480px] overflow-hidden items-center justify-center">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{
+            transform: `translateX(calc(50% - ${
+              activeIndex * CARD_WIDTH_DESKTOP + CARD_WIDTH_DESKTOP / 2
+            }px))`,
+            width: `${CARD_WIDTH_DESKTOP * extendedStories.length}px`,
+          }}
+        >
+          {extendedStories.map((story, index) => {
+            const isActive = index % stories.length === activeIndex;
+
+            return (
               <div
-                className="flex flex-col items-center justify-between w-full h-full p-8 gap-8 relative"
+                key={index}
+                className="w-[514px] flex-shrink-0 p-4 flex items-center justify-center transition-all duration-500"
                 style={{
-                  backgroundColor: "#E2F5D0",
-                  borderRadius: "32px",
-                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
-                  background: "linear-gradient(135deg, #E2F5D0 0%, #F0FAE7 100%)"
+                  opacity: isActive ? 1 : 0.4,
+                  filter: isActive ? "none" : "blur(3px)",
+                  transform: isActive ? "scale(1)" : "scale(0.9)",
                 }}
               >
-                {/* Year Badge with Enhanced Design */}
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-30">
-                  <div className="bg-white border-2 border-[#6FD118] text-[#6FD118] px-6 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse-highlight backdrop-blur-sm">
-                    {story.year}
-                  </div>
-                </div>
-
-                {/* Main Content Card */}
                 <div
-                  className="w-full bg-white p-8 rounded-2xl shadow-inner flex flex-col items-center justify-between h-full transition-all duration-300 group-hover:shadow-xl relative overflow-hidden"
-                  style={{ 
-                    minHeight: "300px",
-                    background: "linear-gradient(135deg, #FFFFFF 0%, #F8FDF5 100%)"
+                  className="flex flex-col items-center justify-between w-full h-[484px] p-8 rounded-3xl"
+                  style={{
+                    background: "linear-gradient(135deg, #E2F5D0 0%, #F0FAE7 100%)",
+                    boxShadow: isActive
+                      ? "0 15px 40px rgba(111, 209, 24, 0.4)"
+                      : "0 6px 20px rgba(0, 0, 0, 0.1)",
                   }}
                 >
-                  {/* Shimmer Effect on Hover */}
-                  <div className="absolute inset-0 animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                  
-                  <div className="text-center w-full">
-                    <h3
-                      className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 transition-colors duration-300 group-hover:text-[#6FD118]"
-                      style={{ lineHeight: "1.3" }}
-                    >
+                  <div className="flex justify-between items-center w-full mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900">
                       {story.title}
                     </h3>
+                    <div className="bg-white border-2 border-[#6FD118] text-[#6FD118] px-6 py-2 rounded-full text-sm font-bold shadow-md">
+                      {story.year}
+                    </div>
                   </div>
                   
-                  <p
-                    className="text-gray-700 text-base md:text-lg leading-relaxed text-center mt-4 overflow-auto max-h-[160px] px-4 transition-colors duration-300 group-hover:text-gray-800"
-                    style={{ 
-                      scrollbarWidth: "thin", 
-                      scrollbarColor: "#6FD118 #E2F5D0",
-                    }}
-                  >
-                    {story.desc}
-                  </p>
-
-                  {/* Progress Indicator */}
-                  <div className="flex justify-center space-x-2 mt-6">
-                    {stories.map((_, dotIndex) => (
-                      <div
-                        key={dotIndex}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                          dotIndex === index % stories.length 
-                            ? 'bg-[#6FD118] w-6' 
-                            : 'bg-gray-300'
-                        }`}
-                      />
-                    ))}
+                  {/* Content */}
+                  <div className="bg-white w-full h-[338px] p-6 rounded-2xl flex items-center justify-center">
+                    <p className="text-gray-700 text-base leading-relaxed text-center">
+                      {story.desc}
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
-        
-        
+      </div>
+
+      {/* Dots Indicator for Mobile/Tablet */}
+      <div className="flex lg:hidden justify-center mt-6 sm:mt-8 space-x-2">
+        {stories.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveIndex(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              activeIndex === index ? 'bg-[#6FD118] w-4' : 'bg-gray-300'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Dots Indicator for Desktop */}
+      <div className="hidden lg:flex justify-center mt-8 space-x-2">
+        {stories.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveIndex(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              activeIndex === index ? 'bg-[#6FD118] w-4' : 'bg-gray-300'
+            }`}
+          />
+        ))}
       </div>
     </section>
   );

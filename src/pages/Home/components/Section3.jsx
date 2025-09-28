@@ -10,7 +10,7 @@ const Section3 = () => {
         "to nurture your passion for learning.",
       ],
       bg: "#E2F5D0",
-      borderLeft: "1px solid #000000",
+      borderLeft: "2px solid #000000", 
     },
     {
       title: "Advanced Learning Opportunities",
@@ -20,6 +20,7 @@ const Section3 = () => {
         "students through complex concepts to ensure mastery and confidence.",
       ],
       bg: "#F0FAE7",
+      borderLeft: "0px solid #000000",
     },
     {
       title: "Tailored Support for Success",
@@ -29,32 +30,28 @@ const Section3 = () => {
         "achievement rates and supportive environment.",
       ],
       bg: "#F0FAE7",
+      borderLeft: "0px solid #000000",
     },
   ];
 
   return (
     <section
-      className="relative flex items-center justify-center w-full min-h-screen py-8"
+      className="relative flex items-center justify-center w-full min-h-screen py-8 sm:py-12 lg:py-16"
       style={{ backgroundColor: "#F0FAE7" }}
     >
       {/* Main Content Container */}
-      <div
-        className="flex flex-col lg:flex-row items-center justify-between gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-        style={{ width: "100%", maxWidth: "1280px" }}
-      >
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 lg:gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Left Image Section */}
-        <div
-          className="flex-shrink-0 relative w-full max-w-[600px] h-[600px]"
-        >
+        <div className="flex-shrink-0 relative w-full lg:max-w-[500px] xl:max-w-[600px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] order-2 lg:order-1">
           <img
             src="https://tse2.mm.bing.net/th/id/OIP.SYlVJv85W6XyI1qvq54-BwHaLH?rs=1&pid=ImgDetMain&o=7&rm=3"
             alt="Science Pathway"
-            className="w-full h-full object-cover rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105"
+            className="w-full h-full object-cover rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl transition-transform duration-300 hover:scale-105"
             style={{ filter: "brightness(1.05) contrast(1.1)" }}
           />
           {/* Image Overlay Effect */}
           <div
-            className="absolute inset-0 rounded-2xl"
+            className="absolute inset-0 rounded-xl sm:rounded-2xl"
             style={{
               background: "linear-gradient(45deg, rgba(76, 175, 80, 0.1), rgba(33, 150, 243, 0.1))",
               pointerEvents: "none",
@@ -63,38 +60,33 @@ const Section3 = () => {
         </div>
 
         {/* Right Cards Section */}
-        <div
-          className="flex flex-col gap-6 w-full max-w-[600px]"
-        >
+        <div className="flex flex-col gap-4 sm:gap-6 w-full lg:max-w-[500px] xl:max-w-[600px] order-1 lg:order-2">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
+              className="rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-md sm:shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
               style={{
                 backgroundColor: feature.bg,
-                borderLeft: feature.borderLeft,
+                borderLeft: feature.borderLeft || "4px solid #000000", // Added fallback
                 border: "1px solid rgba(0,0,0,0.05)",
-                minHeight: "130px",
+                minHeight: "auto sm:min-h-[130px]",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.1)";
+                e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0 10px 25px rgba(0,0,0,0.05)";
+                e.currentTarget.style.boxShadow = "0 5px 15px rgba(0,0,0,0.05)";
               }}
             >
               {/* Card Header */}
-              <div className="mb-3">
+              <div className="mb-2 sm:mb-3">
                 <h3
-                  className="text-xl font-bold text-gray-900 leading-tight"
+                  className="text-lg sm:text-xl font-bold text-gray-900 leading-tight urbanist-700"
                   style={{ 
-                    fontSize: "1.25rem", 
                     lineHeight: "1.4",
-                    fontFamily: "'Urbanist', sans-serif",
-                    fontWeight: 700
                   }}
                 >
                   {feature.title}
@@ -106,12 +98,10 @@ const Section3 = () => {
                 {feature.description.map((paragraph, idx) => (
                   <p
                     key={idx}
-                    className="text-gray-700 leading-relaxed"
+                    className="text-gray-700 leading-relaxed urbanist-400"
                     style={{ 
-                      fontSize: "0.95rem", 
+                      fontSize: "0.875rem sm:0.95rem", 
                       lineHeight: "1.5",
-                      fontFamily: "'Urbanist', sans-serif",
-                      fontWeight: 400
                     }}
                   >
                     {paragraph}

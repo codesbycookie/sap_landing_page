@@ -18,6 +18,12 @@ const Section2 = () => {
         0%, 100% { transform: scale(1); }
         50% { transform: scale(1.05); }
       }
+      .animate-fade-in {
+        animation: fade-in 0.8s ease-out forwards;
+      }
+      .animate-pulse-slow {
+        animation: pulse-slow 3s ease-in-out infinite;
+      }
     `;
     document.head.appendChild(style);
 
@@ -28,13 +34,13 @@ const Section2 = () => {
 
   return (
     <section
-      className="relative w-full min-h-[401px] flex items-center justify-center overflow-hidden"
+      className="relative w-full flex items-center justify-center overflow-hidden"
       style={{
         backgroundColor: "#E2F5D0",
-        height: "401px",
+        minHeight: "401px",
         opacity: 1,
         position: "relative",
-        padding: "36px 80px",
+        padding: "36px 20px",
         gap: "10px",
         transform: "rotate(0deg)",
         margin: "0 auto",
@@ -42,32 +48,30 @@ const Section2 = () => {
     >
       <div
         className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1440 320\'%3E%3Cpath fill=\'none\' stroke=\'%236FD118\' stroke-width=\'1\' opacity=\'0.1\' d=\'M0,160 C360,320 1080,0 1440,160\'/%3E%3C/svg%3E')] bg-no-repeat bg-bottom opacity-50 z-0"
-        style={{ height: "401px" }}
       />
 
       <div
-        className="relative z-10 w-full max-w-[1280px] backdrop-blur-sm"
-        style={{ padding: "0" }}
+        className="relative z-10 w-full max-w-[1280px] backdrop-blur-sm px-4 sm:px-8 lg:px-20"
       >
         <h2
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-8 sm:mb-12 text-center md:text-left animate-fade-in"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl max-w-[800px] font-extrabold text-gray-900 mb-6 sm:mb-10 lg:mb-12 text-center lg:text-left animate-fade-in"
           style={{ animationDelay: "0.2s" }}
         >
           Long heading is what you see here in this feature section
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <div
               key={stat.id}
-              className="flex flex-col items-center sm:items-start p-4 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="flex flex-col items-center lg:items-start p-4 sm:p-5 lg:p-6 rounded-xl bg-white/80 backdrop-blur-sm shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 lg:hover:-translate-y-2"
             >
               <h3
-                className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#6FD118] mb-2 sm:mb-3 animate-pulse-slow"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#6FD118] mb-2 sm:mb-3 animate-pulse-slow"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {stat.value}
               </h3>
-              <p className="text-gray-700 text-sm sm:text-base font-medium text-center sm:text-left">
+              <p className="text-gray-700 text-sm sm:text-base font-medium text-center lg:text-left leading-relaxed">
                 {stat.label}
               </p>
             </div>

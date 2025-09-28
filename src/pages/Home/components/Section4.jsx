@@ -2,38 +2,34 @@ import React from "react";
 
 const Section4 = () => {
   return (
-    <section className="relative w-full h-[300px] flex items-center justify-center bg-white">
+    <section className="relative w-full min-h-[200px] sm:min-h-[250px] md:min-h-[300px] flex items-center justify-center bg-white py-16 sm:py-20 md:py-24">
       {/* Card */}
       <div
-        className="absolute rounded-lg shadow-lg"
+        className="rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl mx-4 sm:mx-6 md:mx-8"
         style={{
-          width: "90%", // Adjusted for responsiveness
+          width: "100%",
           maxWidth: "1280px",
-          height: "auto", // Adjusted to auto for flexibility
-          top: "80px",
-          left: "50%",
-          transform: "translateX(-50%)",
           backgroundColor: "#E2F5D0",
         }}
       >
-        <div className="h-full flex flex-col sm:flex-row items-center justify-between px-4 sm:px-12 py-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-10 md:py-12 gap-6 sm:gap-8">
           {/* Left Content: Heading + Subtext */}
-          <div className="flex flex-col text-left mb-4 sm:mb-0">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+          <div className="flex flex-col text-center lg:text-left w-full lg:w-auto">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 urbanist-700">
               Start Your Academic Journey Today
             </h3>
-            <p className="text-sm sm:text-lg text-gray-700 max-w-md">
+            <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl urbanist-400 leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               vel urna at dui cursus ullamcorper.
             </p>
           </div>
 
           {/* Right Content: Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <button className="px-6 sm:px-8 py-2 sm:py-3 bg-[#6FD118] text-black font-medium rounded hover:brightness-90 transition-colors">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-[#6FD118] text-black font-medium rounded-lg hover:bg-[#5EBF0F] transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
               Explore Courses
             </button>
-            <button className="px-6 sm:px-8 py-2 sm:py-3 bg-gray-400 text-black font-medium rounded hover:brightness-90 transition-colors">
+            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-300 text-black font-medium rounded-lg hover:bg-gray-400 transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
               Contact Us
             </button>
           </div>
