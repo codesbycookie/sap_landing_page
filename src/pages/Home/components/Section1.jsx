@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../index.css"
 
-const AcademicExcellence = () => {
+const Section1 = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background grid */}
@@ -49,4 +49,4 @@ const AcademicExcellence = () => {
   );
 };
 
-export default AcademicExcellence;
+export default Section1;
