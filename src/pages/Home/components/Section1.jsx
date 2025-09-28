@@ -1,79 +1,47 @@
 import React from "react";
-import "../../../index.css";
-
-// Import your images
-import image1 from "../../../../public/Gallery-1.jpg";
-import image2 from "../../../../public/Gallery-2.jpg";
-import image3 from "../../../../public/Gallery-3.jpg";
+import "../../../index.css"
 
 const Section1 = () => {
-  const imagesData = [
-    {
-      src: image1,
-      alt: "Campus building",
-    },
-    {
-      src: image2,
-      alt: "Students learning",
-    },
-    {
-      src: image3,
-      alt: "Academic library",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500",
-      alt: "Graduation ceremony",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500",
-      alt: "Science lab",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500",
-      alt: "Classroom session",
-    },
-  ];
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background images grid */}
-      <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 gap-4 p-6">
-        {imagesData.map((image, idx) => (
+      {/* Background grid */}
+      <div className="absolute inset-0 grid grid-cols-6 gap-4">
+        {Array.from({ length: 36 }).map((_, idx) => (
           <div
             key={idx}
-            className={`relative rounded-2xl overflow-hidden shadow-xl scroll-float`}
-            style={{ animationDelay: `${idx * 0.8}s` }}
+            className={`bg-gray-300 flex items-center justify-center rounded-md animate-scroll overflow-hidden ${
+              idx % 2 === 0 ? "scroll-up" : "scroll-down"
+            }`}
           >
+            {/* Replace placeholder icon with your image */}
             <img
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-110"
+              src={`/images/grid-image-${(idx % 6) + 1}.jpg`}
+              alt={`Academic excellence ${idx + 1}`}
+              className="w-full h-full object-cover"
             />
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/30 hover:bg-black/10 transition-all duration-500"></div>
           </div>
         ))}
       </div>
 
-      {/* Translucent overlay for better contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70 backdrop-blur-xs"></div>
+      {/* Translucent black overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Foreground content */}
-      <div className="relative text-center max-w-3xl px-6 z-10 animate-fadeInUp">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
+      <div className="relative text-center max-w-2xl px-6 z-10">
+        <h1 className="text-4xl md:text-5xl font-bold text-white">
           35+ Years of Academic Excellence
         </h1>
-        <p className="text-gray-200 text-lg md:text-xl leading-relaxed mb-8">
+        <p className="mt-4 text-gray-200 text-lg">
           Empowering students to achieve their highest potential through
           personalized learning and expert guidance. Join a legacy of academic
           success and transformative education.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-5">
-          <button className="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl shadow-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-            Explore Programs
+        <div className="mt-6 flex justify-center gap-4">
+          <button className="px-6 py-2 bg-green-500 text-white rounded shadow hover:bg-green-800 transition">
+            Explore
           </button>
-          <button className="px-8 py-3 bg-white/10 text-white font-semibold rounded-xl shadow-lg hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl backdrop-blur-md">
-            Admissions Info
+          <button className="px-6 py-2 bg-gray-200 text-gray-800 rounded shadow hover:bg-gray-300 transition">
+            Admissions
           </button>
         </div>
       </div>

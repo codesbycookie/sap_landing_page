@@ -35,6 +35,77 @@ body{
   font-style: normal;
 }
 
+/* FASTER Scrolling animations for background grid */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(-180deg);
+    opacity: 0;
+  }
+}
+
+.animate-scroll {
+  animation-duration: 8s; /* Changed from 20s to 8s for faster speed */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.scroll-up {
+  animation-name: scrollUp;
+}
+
+.scroll-down {
+  animation-name: scrollDown;
+}
+
+/* Shorter staggered delays for faster continuous movement */
+.animate-scroll:nth-child(6n+1) { animation-delay: 0s; }
+.animate-scroll:nth-child(6n+2) { animation-delay: 1s; }
+.animate-scroll:nth-child(6n+3) { animation-delay: 2s; }
+.animate-scroll:nth-child(6n+4) { animation-delay: 3s; }
+.animate-scroll:nth-child(6n+5) { animation-delay: 4s; }
+.animate-scroll:nth-child(6n+6) { animation-delay: 5s; }
+
+/* EVEN FASTER Alternative (uncomment to use) */
+/*
+.animate-scroll {
+  animation-duration: 5s;
+}
+
+.animate-scroll:nth-child(6n+1) { animation-delay: 0s; }
+.animate-scroll:nth-child(6n+2) { animation-delay: 0.5s; }
+.animate-scroll:nth-child(6n+3) { animation-delay: 1s; }
+.animate-scroll:nth-child(6n+4) { animation-delay: 1.5s; }
+.animate-scroll:nth-child(6n+5) { animation-delay: 2s; }
+.animate-scroll:nth-child(6n+6) { animation-delay: 2.5s; }
+*/
+
 /* Floating animation for background images */
 @keyframes floatUp {
   0% {
@@ -67,4 +138,3 @@ body{
 .animate-fadeInUp {
   animation: fadeInUp 1.2s ease-out forwards;
 }
-
