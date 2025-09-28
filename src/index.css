@@ -35,28 +35,36 @@ body{
   font-style: normal;
 }
 
-@keyframes scrollDown {
+/* Floating animation for background images */
+@keyframes floatUp {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.05);
   }
   100% {
-    transform: translateY(100%);
+    transform: translateY(0) scale(1);
   }
 }
 
-@keyframes scrollUp {
-  0% {
-    transform: translateY(100%);
+.scroll-float {
+  animation: floatUp 8s ease-in-out infinite;
+}
+
+/* Fade-up for text content */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
   }
-  100% {
-    transform: translateY(-100%);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.scroll-down {
-  animation: scrollDown 20s linear infinite;
+.animate-fadeInUp {
+  animation: fadeInUp 1.2s ease-out forwards;
 }
 
-.scroll-up {
-  animation: scrollUp 20s linear infinite;
-}
