@@ -2,7 +2,7 @@ import React from "react";
 
 const Section4 = () => {
   return (
-    <section className="relative w-full h-[426px] flex items-center justify-center bg-white">
+    <section className="relative w-full h-[300px] flex items-center justify-center bg-white">
       {/* Card */}
       <div
         className="absolute rounded-lg shadow-lg"
@@ -10,7 +10,7 @@ const Section4 = () => {
           width: "90%", // Adjusted for responsiveness
           maxWidth: "1280px",
           height: "auto", // Adjusted to auto for flexibility
-          top: "112px",
+          top: "80px",
           left: "50%",
           transform: "translateX(-50%)",
           backgroundColor: "#E2F5D0",

@@ -8,24 +8,27 @@ const Section2 = () => {
   ];
 
   return (
-    <div className="min-h-[40vh] bg-[#E2F5D0] flex flex-col justify-center items-center gap-8 px-4 py-10">
+    <div className="min-h-[40vh] bg-[#E2F5D0] flex flex-col gap-8 px-14 py-18">
       {/* Heading */}
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-5">
-        The Legacy We Built Over Years
-      </h1>
+      <div className="ml-23">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-left mb-5">
+            The Legacy We Built Over Years
+          </h1>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
-        {stats.map((item) => (
-          <div
-            key={item.id}
-            className="flex flex-col border-l-4 border-green-600 pl-4"
-          >
-            <h2 className="text-3xl md:text-4xl font-semibold">{item.value}</h2>
-            <p className="text-lg md:text-xl text-gray-700">{item.label}</p>
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+            {stats.map((item) => (
+              <div
+                key={item.id}
+                className="flex flex-col border-l-4 border-green-600 pl-4"
+              >
+                <h2 className="text-3xl md:text-4xl font-semibold">{item.value}</h2>
+                <p className="text-lg md:text-xl text-gray-700">{item.label}</p>
+              </div>
+            ))}
           </div>
-        ))}
       </div>
+      
     </div>
   );
 };

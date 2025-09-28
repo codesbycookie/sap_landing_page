@@ -5,29 +5,30 @@ const Section3 = () => {
     {
       title: "Explore Our Science Courses",
       description: [
-        "Our 10th-grade foundation lays the groundwork for a successful science education.",
-        "Covering Physics, Chemistry, Mathematics, and Biology to foster your passion for learning.",
+        "Our 10th-grade foundation courses lay the groundwork for a successful",
+        "Science education. Dive into Physics, Chemistry, Mathematics, and Biology",
+        "to nurture your passion for learning.",
       ],
       bg: "#E2F5D0",
-      borderLeft: "4px solid #4CAF50",
+      borderLeft: "1px solid #000000",
     },
     {
       title: "Advanced Learning Opportunities",
       description: [
         "In 11th and 12th grades, students can specialize in their favorite subjects,",
-        "enhancing their understanding and skills with expert faculty guidance.",
+        "enhancing their understanding and skills. Our expert faculty guide",
+        "students through complex concepts to ensure mastery and confidence.",
       ],
-      bg: "#F8FDF2",
-      borderLeft: "4px solid #2196F3",
+      bg: "#F0FAE7",
     },
     {
       title: "Tailored Support for Success",
       description: [
-        "We offer personalized learning plans that cater to individual strengths.",
-        "Our commitment to student success is reflected in our high achievement rates.",
+        "We offer personalized learning plans that cater to individual strengths and",
+        "aspirations. Our commitment to student success is reflected in our high",
+        "achievement rates and supportive environment.",
       ],
-      bg: "#F8FDF2",
-      borderLeft: "4px solid #FF9800",
+      bg: "#F0FAE7",
     },
   ];
 
@@ -43,7 +44,7 @@ const Section3 = () => {
       >
         {/* Left Image Section */}
         <div
-          className="flex-shrink-0 relative w-full max-w-[600px] h-[500px]"
+          className="flex-shrink-0 relative w-full max-w-[600px] h-[600px]"
         >
           <img
             src="https://tse2.mm.bing.net/th/id/OIP.SYlVJv85W6XyI1qvq54-BwHaLH?rs=1&pid=ImgDetMain&o=7&rm=3"
@@ -73,7 +74,7 @@ const Section3 = () => {
                 backgroundColor: feature.bg,
                 borderLeft: feature.borderLeft,
                 border: "1px solid rgba(0,0,0,0.05)",
-                minHeight: "140px",
+                minHeight: "130px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -85,26 +86,33 @@ const Section3 = () => {
                 e.currentTarget.style.boxShadow = "0 10px 25px rgba(0,0,0,0.05)";
               }}
             >
-              {/* Card Header with Icon */}
-              <div className="flex items-start gap-4 mb-3">
-                <span className="text-2xl flex-shrink-0" style={{ marginTop: "2px" }}>
-                  {feature.icon}
-                </span>
+              {/* Card Header */}
+              <div className="mb-3">
                 <h3
                   className="text-xl font-bold text-gray-900 leading-tight"
-                  style={{ fontSize: "1.25rem", lineHeight: "1.4" }}
+                  style={{ 
+                    fontSize: "1.25rem", 
+                    lineHeight: "1.4",
+                    fontFamily: "'Urbanist', sans-serif",
+                    fontWeight: 700
+                  }}
                 >
                   {feature.title}
                 </h3>
               </div>
 
               {/* Description */}
-              <div className="space-y-2 ml-10">
+              <div className="space-y-1">
                 {feature.description.map((paragraph, idx) => (
                   <p
                     key={idx}
                     className="text-gray-700 leading-relaxed"
-                    style={{ fontSize: "0.95rem", lineHeight: "1.5" }}
+                    style={{ 
+                      fontSize: "0.95rem", 
+                      lineHeight: "1.5",
+                      fontFamily: "'Urbanist', sans-serif",
+                      fontWeight: 400
+                    }}
                   >
                     {paragraph}
                   </p>
