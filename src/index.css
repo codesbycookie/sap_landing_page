@@ -35,3 +35,28 @@ body{
   font-style: normal;
 }
 
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.scroll-down {
+  animation: scrollDown 20s linear infinite;
+}
+
+.scroll-up {
+  animation: scrollUp 20s linear infinite;
+}
