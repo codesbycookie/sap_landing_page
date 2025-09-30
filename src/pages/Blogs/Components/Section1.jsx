@@ -256,7 +256,7 @@ export default function Section1() {
   return (
     <>
       {/* Header Section */}
-      <div className="flex flex-col gap-3 h-full justify-center items-center mt-3 p-3 lg:mt-10 mb-6 lg:mb-8">
+      <div className="flex flex-col gap-3 h-full justify-center items-center mt-3 p-3 lg:mt-10 mb-6 lg:mb-8 bg-white">
         <p className='text-base lg:text-lg text-gray-400 font-light tracking-wide text-center'>Follow our path</p>
         <h1 className='text-3xl lg:text-5xl font-bold bg-gradient-to-r from-green-500 via-green-600 to-green-700 bg-clip-text text-transparent pb-2 text-center'>
           Our Blogs
@@ -272,7 +272,7 @@ export default function Section1() {
         <button 
           onClick={handlePrev}
           disabled={currentIndex === 0}
-          className={`hidden md:flex absolute left-2 lg:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 lg:p-3 transition-all duration-200 ${
+          className={`hidden md:flex absolute left-2 lg:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-white shadow-lg rounded-full p-2 lg:p-3 transition-all duration-200 ${
             currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110'
           }`}
         >

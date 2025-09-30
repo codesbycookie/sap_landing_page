@@ -1,11 +1,8 @@
 const Section4 = () => {
   return (
     <section
-      className="w-full min-h-screen flex flex-col items-center justify-center relative overflow-hidden py-20 px-4 sm:px-6 md:px-8"
-      style={{
-        background:
-          "linear-gradient(114.38deg, rgba(111, 209, 24, 0) 0%, rgba(111, 209, 24, 0.05) 100%)",
-      }}
+      className="w-full min-h-screen flex flex-col items-center justify-center relative overflow-hidden py-20 px-4 sm:px-6 md:px-8 bg-white"
+      
     >
       {/* Solar Circle in background */}
       <div
@@ -53,7 +50,7 @@ const Section4 = () => {
           </div>
 
           {/* Card 1 - Top-Left - Dedication */}
-          <div className="text-center relative p-8 bg-gradient-to-br from-[#6FD118]/20 to-white">
+          <div className="text-center relative p-8 bg-white">
             <div className="w-12 h-12 bg-[#6FD118] rounded-full flex items-center mx-auto justify-center mb-6">
               <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -92,7 +89,7 @@ const Section4 = () => {
           </div>
 
           {/* Card 4 - Bottom-Right - Holistic Education */}
-          <div className="text-center relative p-8 bg-gradient-to-tr from-[#6FD118]/20 to-white">
+          <div className="text-center relative p-8 bg-white">
             <div className="w-12 h-12 bg-[#6FD118] rounded-full flex items-center mx-auto justify-center mb-6">
               <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
