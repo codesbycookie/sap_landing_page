@@ -19,8 +19,8 @@ const Section3 = () => {
         "enhancing their understanding and skills. Our expert faculty guide",
         "students through complex concepts to ensure mastery and confidence.",
       ],
-      bg: "#F8FDF4",
-      accentColor: "#2196F3",
+      bg: "#E2F5D0",
+      accentColor: "#4CAF50",
     },
     {
       title: "Tailored Support for Success",
@@ -29,8 +29,8 @@ const Section3 = () => {
         "aspirations. Our commitment to student success is reflected in our high",
         "achievement rates and supportive environment.",
       ],
-      bg: "#F8FDF4",
-      accentColor: "#FF9800",
+      bg: "#E2F5D0",
+      accentColor: "#4CAF50",
     },
   ];
 
