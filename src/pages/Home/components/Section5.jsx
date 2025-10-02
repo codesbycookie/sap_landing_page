@@ -51,7 +51,7 @@ const Section5 = () => {
       
       <section
         className="relative w-full py-8 sm:py-12 md:py-16 min-h-[500px] sm:min-h-[600px] mx-auto overflow-hidden"
-        style={{ backgroundColor: '#F0FAE7' }}
+        style={{ backgroundColor: '#fff' }}
       >
         <div
           className="w-[95%] sm:w-[90%] max-w-[1280px] mx-auto min-h-[400px] sm:min-h-[500px] rounded-xl sm:rounded-2xl border border-gray-300 flex flex-col lg:flex-row overflow-hidden"

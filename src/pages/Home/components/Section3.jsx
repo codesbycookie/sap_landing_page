@@ -62,7 +62,7 @@ const Section3 = () => {
         </div>
 
         {/* Right Cards Section */}
-        <div className="flex flex-col gap-6 w-full lg:min-w-[70%] order-1 lg:order-2">
+        <div className="flex flex-col gap-6 w-full lg:min-w-[50%] order-1 lg:order-2">
           {features.map((feature, index) => (
             <div
               key={index}
