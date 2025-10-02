@@ -109,7 +109,7 @@ const Section5 = () => {
                       {[...Array(testimonial.stars)].map((_, starIndex) => (
                         <span
                           key={starIndex}
-                          className="text-base sm:text-lg md:text-xl text-yellow-500 mr-1"
+                          className="text-base sm:text-lg md:text-xl text-black mr-1"
                         >
                           ★
                         </span>
@@ -158,7 +158,7 @@ const Section5 = () => {
                       {[...Array(testimonial.stars)].map((_, starIndex) => (
                         <span
                           key={starIndex}
-                          className="text-base sm:text-lg md:text-xl text-yellow-500 mr-1"
+                          className="text-base sm:text-lg md:text-xl text-black mr-1"
                         >
                           ★
                         </span>

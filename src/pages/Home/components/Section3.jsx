@@ -46,7 +46,7 @@ const Section3 = () => {
         <div className="flex-shrink-0 relative w-full lg:max-w-[45%] h-[250px] sm:h-[450px] lg:h-[550px] order-2 lg:order-1">
           <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-xl">
             <img
-              src="/Gallery-1.jpg"
+              src="/Gallery-2.jpg"
               alt="Science Pathway"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               

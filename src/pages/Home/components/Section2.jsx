@@ -12,7 +12,7 @@ const Section2 = () => {
       {/* Main Content Container */}
       <div className="w-full max-w-6xl mx-auto">
         {/* Heading */}
-        <div className="text-center lg:text-left mb-8 sm:mb-10 lg:mb-12">
+        <div className="flex flex-col gap-10 text-center lg:text-left mb-8 sm:mb-10 lg:mb-12">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 lg:mb-6 urbanist-700">
             The Legacy We Built Over Years
           </h1>
@@ -22,7 +22,7 @@ const Section2 = () => {
             {stats.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col border-l-4 border-green-600 pl-4 sm:pl-6 py-4 sm:py-6"
+                className="flex flex-col border-l-2 border-gray-400 pl-4 sm:pl-6 py-4 sm:py-6"
               >
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 urbanist-700 mb-2">
                   {item.value}
