@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Section1 = () => {
   return (
@@ -40,22 +41,24 @@ const Section1 = () => {
             A Legacy of Educational Excellence Since 1985 - Nurturing Young Minds in Kolathur, Chennai
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4">
-            <button
-              className="px-6 sm:px-8 py-3 bg-white text-gray-700 font-medium border border-gray-300 rounded-full hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
+            <Link
+              to="/about"
+              className="px-6 sm:px-8 py-3 bg-white text-gray-700 font-medium border border-gray-300 rounded-md hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
             >
-              Learn more
-            </button>
-            <button
-              className="px-6 sm:px-8 py-3 bg-[#6FD118] text-white font-medium rounded-full hover:bg-[#5EBF0F] transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
+              Contact Us
+            </Link>
+            <Link
+              to="/careers"
+              className="px-6 sm:px-8 py-3 bg-[#6FD118] text-white font-medium rounded-md hover:bg-[#5EBF0F] transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
             >
-              Get started
-            </button>
+              Join as Staff
+            </Link>
           </div>
         </div>
 
         {/* Right Side - Image */}
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative mb-8 lg:mb-0 order-1 lg:order-2">
-          <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg bg-white rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl p-3 sm:p-4 md:p-6 flex items-center justify-center">
+          <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl bg-white rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl p-3 sm:p-4 md:p-6 flex items-center justify-center">
             {/* Decorative Wavy Element */}
             <svg
               className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 opacity-30 sm:opacity-50 transform translate-x-1/4 translate-y-1/4"
@@ -70,14 +73,15 @@ const Section1 = () => {
               />
             </svg>
             
-            {/* Main Image */}
-            <div className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100">
+            {/* Main Image - Bigger */}
+            <div className="w-full h-60 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100">
               <img
-                src="https://tse3.mm.bing.net/th/id/OIP.kCh29QDlNfXXBXafT-i_ZAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3"
+                src="/Gallery-1.jpg"
                 alt="Sampath Academy Campus"
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 onError={(e) => {
-                  e.target.src = 'https://tse3.mm.bing.net/th/id/OIP.kCh29QDlNfXXBXafT-i_ZAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3';
+                  e.target.src =
+                    'https://tse3.mm.bing.net/th/id/OIP.kCh29QDlNfXXBXafT-i_ZAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3';
                 }}
               />
             </div>

@@ -57,7 +57,7 @@ const Section2 = () => {
           className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl max-w-[800px] font-extrabold text-gray-900 mb-6 sm:mb-10 lg:mb-12 text-center lg:text-left animate-fade-in"
           style={{ animationDelay: "0.2s" }}
         >
-          Long heading is what you see here in this feature section
+          40+ Years of Academic Excellence and Legacy
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {stats.map((stat, index) => (
@@ -66,7 +66,7 @@ const Section2 = () => {
               className="flex flex-col items-center lg:items-start p-4 sm:p-5 lg:p-6 rounded-xl bg-white/80 backdrop-blur-sm shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 lg:hover:-translate-y-2"
             >
               <h3
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#6FD118] mb-2 sm:mb-3 animate-pulse-slow"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-2 sm:mb-3 animate-pulse-slow"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {stat.value}

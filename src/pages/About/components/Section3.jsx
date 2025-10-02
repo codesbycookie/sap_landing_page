@@ -38,8 +38,17 @@ const Section3 = () => {
   const CARD_WIDTH_TABLET = 400;
   const CARD_WIDTH_DESKTOP = 514;
 
+  // Mobile and tablet card width based on screen size
+  const getMobileCardWidth = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth >= 640) return CARD_WIDTH_TABLET;
+      return CARD_WIDTH_MOBILE;
+    }
+    return CARD_WIDTH_MOBILE;
+  };
+
   return (
-    <section className="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#F0FAE7] via-white to-[#E2F5D0] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="w-full min-h-screen flex flex-col items-center justify-center bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="text-center mb-8 sm:mb-10 lg:mb-12">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
           The Chapters We've{" "}
@@ -49,42 +58,60 @@ const Section3 = () => {
         </h2>
       </div>
 
-      {/* Mobile & Tablet Vertical Layout */}
-      <div className="flex lg:hidden flex-col items-center w-full max-w-2xl space-y-6 sm:space-y-8">
-        {stories.map((story, index) => (
-          <div
-            key={index}
-            className="w-full max-w-[400px] sm:max-w-[450px] p-4 sm:p-6"
-          >
-            <div
-              className="flex flex-col items-center justify-between w-full min-h-[300px] sm:min-h-[350px] p-6 sm:p-8 rounded-3xl transition-all duration-500"
-              style={{
-                background: "linear-gradient(135deg, #E2F5D0 0%, #F0FAE7 100%)",
-                boxShadow: index === activeIndex
-                  ? "0 15px 40px rgba(111, 209, 24, 0.4)"
-                  : "0 6px 20px rgba(0, 0, 0, 0.1)",
-                opacity: index === activeIndex ? 1 : 0.7,
-                transform: index === activeIndex ? "scale(1.02)" : "scale(0.98)",
-              }}
-            >
-              <div className="flex flex-col sm:flex-row justify-between items-center w-full mb-4 sm:mb-6 gap-4 sm:gap-0">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center sm:text-left">
-                  {story.title}
-                </h3>
-                <div className="bg-white border-2 border-[#6FD118] text-[#6FD118] px-4 sm:px-6 py-2 rounded-full text-sm font-bold shadow-md">
-                  {story.year}
+      {/* Mobile & Tablet Carousel */}
+      <div className="flex lg:hidden relative w-full max-w-2xl h-[400px] sm:h-[450px] overflow-hidden items-center justify-center">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translateX(calc(50% - ${
+              activeIndex * getMobileCardWidth() + getMobileCardWidth() / 2
+            }px))`,
+            width: `${getMobileCardWidth() * extendedStories.length}px`,
+          }}
+        >
+          {extendedStories.map((story, index) => {
+            const isActive = index % stories.length === activeIndex;
+
+            return (
+              <div
+                key={index}
+                className="flex-shrink-0 p-4 flex items-center justify-center transition-all duration-500"
+                style={{
+                  width: `${getMobileCardWidth()}px`,
+                  opacity: isActive ? 1 : 0.4,
+                  filter: isActive ? "none" : "blur(2px)",
+                  transform: isActive ? "scale(1)" : "scale(0.9)",
+                }}
+              >
+                <div
+                  className="flex flex-col items-center justify-between w-full h-[350px] sm:h-[380px] p-6 sm:p-8 rounded-3xl transition-all duration-500"
+                  style={{
+                    background: "linear-gradient(135deg, #E2F5D0 0%, #F0FAE7 100%)",
+                    boxShadow: isActive
+                      ? "0 15px 40px rgba(111, 209, 24, 0.4)"
+                      : "0 6px 20px rgba(0, 0, 0, 0.1)",
+                  }}
+                >
+                  <div className="flex flex-col sm:flex-row justify-between items-center w-full mb-4 sm:mb-6 gap-4 sm:gap-0">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center sm:text-left">
+                      {story.title}
+                    </h3>
+                    <div className="bg-white border-2 border-[#6FD118] text-[#6FD118] px-4 sm:px-6 py-2 rounded-full text-sm font-bold shadow-md">
+                      {story.year}
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="bg-white w-full flex-1 p-4 sm:p-6 rounded-2xl">
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-center sm:text-left">
+                      {story.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
-              
-              {/* Content */}
-              <div className="bg-white w-full flex-1 p-4 sm:p-6 rounded-2xl">
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-center sm:text-left">
-                  {story.desc}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
 
       {/* Desktop Carousel */}
