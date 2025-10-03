@@ -42,10 +42,10 @@ const Section1 = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4">
             <Link
-              to="/about"
+              to="/courses"
               className="px-6 sm:px-8 py-3 bg-white text-gray-700 font-medium border border-gray-300 rounded-md hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
             >
-              Contact Us
+              Explore Courses
             </Link>
             <Link
               to="/careers"

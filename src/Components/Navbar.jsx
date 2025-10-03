@@ -52,7 +52,7 @@ const Navbar = () => {
               to="/"
               className="text-xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent"
             >
-              Sampath Academy
+              <img src="/logo.png" alt="" width={100} height={100} />
             </Link>
           </div>
 
