@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {IconChevronCompactDown} from "@tabler/icons-react";
+import { IconChevronCompactDown, IconMenu2, IconX } from "@tabler/icons-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -116,28 +116,14 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-600 hover:text-green-600 focus:outline-none focus:text-green-600 p-2"
+              className="text-gray-600 hover:text-green-600 focus:outline-none focus:text-green-600 p-2 transition-colors duration-200"
               aria-label="Toggle menu"
             >
-              <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span
-                  className={`block h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
-                    isMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
-                  }`}
-                ></span>
-                <span
-                  className={`block h-0.5 w-6 bg-current transition duration-300 ease-in-out mt-1 ${
-                    isMenuOpen ? "opacity-0" : "opacity-100"
-                  }`}
-                ></span>
-                <span
-                  className={`block h-0.5 w-6 bg-current transform transition duration-300 ease-in-out mt-1 ${
-                    isMenuOpen
-                      ? "-rotate-45 -translate-y-1.5"
-                      : "translate-y-0.5"
-                  }`}
-                ></span>
-              </div>
+              {isMenuOpen ? (
+                <IconX size={24} className="text-current" />
+              ) : (
+                <IconMenu2 size={24} className="text-current" />
+              )}
             </button>
           </div>
         </div>

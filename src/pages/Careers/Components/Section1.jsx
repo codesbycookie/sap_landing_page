@@ -3,7 +3,7 @@ import { IconBrandFacebook, IconBrandInstagram, IconBrandX, IconBrandYoutube } f
 
 export default function Section1() {
   return (
-    <div className='min-[90vh] bg-gradient-to-br from-white to-green-50 flex items-center justify-center px-6'>
+    <div className='min-[90vh] bg-gradient-to-br from-white to-green-50 flex items-center justify-center px-6 mb-3'>
       <div className="max-w-6xl w-full mt-5 p-8 md:p-12 rounded-2xl bg-white shadow-xl grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
         {/* Left side - Form */}
         <div className="md:col-span-2 space-y-8">
