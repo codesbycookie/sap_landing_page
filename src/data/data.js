@@ -1,45 +1,45 @@
 export const HomePageData = {
     section1:{
-        title:"35+ Years of Academic Excellence",
-        description:"Empowering students to achieve their highest potential through personalized learning and expert guidance. Join a legacy of academic success and transformative education.",
+        title:"Welcome to Sampath Academy",
+        description:"Excellence in Education Since 1985 | Best Tuition Centre in Kolathur",
         CTA:["Explore Courses","Admission"]
     },
     section2:{
         title:"The Legacy We Built Over Years",
         stats:[
             { id: 1, value: "40+", label: "Academic excellence in Years" },
-            { id: 2, value: "95%", label: "Success Rate" },
-            { id: 3, value: "5000+", label: "Students Enrolled" },
+            { id: 2, value: "25+", label: "Experienced Faculty" },
+            { id: 3, value: "20000+", label: "Students Graduated" },
         ],
     },
     section3:{
         ImgUrl:"/Gallery-2.jpg",
         features : [
                 {
-                title: "Explore Our Science Courses",
+                title: "Comprehensive Curriculum",
                 description: [
-                    "Our 10th-grade foundation courses lay the groundwork for a successful",
-                    "Science education. Dive into Physics, Chemistry, Mathematics, and Biology",
-                    "to nurture your passion for learning.",
+                    "Complete coverage of CBSE and State Board syllabus with regular assessments",
+                    "Hands-on learning experiences to nurture your passion for learning.",
+                    "Our curriculum is designed to foster critical thinking and problem-solving skills.",
                 ],
                 bg: "#E2F5D0",
                 accentColor: "#8dc540",
                 },
                 {
-                title: "Advanced Learning Opportunities",
+                title: "Expert Faculty",
                 description: [
-                    "In 11th and 12th grades, students can specialize in their favorite subjects,",
-                    "enhancing their understanding and skills. Our expert faculty guide",
-                    "students through complex concepts to ensure mastery and confidence.",
+                    "Experienced teachers with proven track record in their respective subjects",
+                    "Dedicated to guiding students through complex concepts to ensure mastery and confidence.",
+                    "Our faculty is committed to fostering a love for learning and academic excellence.",
                 ],
                 bg: "#E2F5D0",
                 accentColor: "#8dc540",
                 },
                 {
-                title: "Tailored Support for Success",
+                title: "Proven Results",
                 description: [
-                    "We offer personalized learning plans that cater to individual strengths and",
-                    "aspirations. Our commitment to student success is reflected in our high",
+                    "1000+ centum scorers and thousands of successful students over 40+ years",
+                    "Our commitment to student success is reflected in our high",
                     "achievement rates and supportive environment.",
                 ],
                 bg: "#E2F5D0",
@@ -59,21 +59,33 @@ export const HomePageData = {
         ImgUrl:"/Gallery-1.jpg",
         testimonials:[
                 {
-                name: 'Rahul Sharma',
-                position: 'State Topper, Science Stream',
-                text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."',
+                name: 'Priya Krishnan',
+                position: 'Class 12th, CBSE',
+                text: '"Sampath Academy transformed my understanding of Physics and Chemistry. The teachers are incredibly patient and make complex concepts easy to understand. I scored 98% in both subjects!"',
                 stars: 5,
                 },
                 {
-                name: 'Priya Patel',
-                position: 'National Merit Scholar',
-                text: '"Our expert faculty helped me and secure top ranks in board exams."',
+                name: 'Rahul Menon',
+                position: 'Class 11th, CBSE',
+                text: '"The Mathematics coaching here is exceptional. Mr. Akilesh sir has a unique way of teaching that makes even the toughest problems seem simple. Highly recommend!"',
                 stars: 5,
                 },
                 {
-                name: 'Name Surname',
-                position: 'Company position',
-                text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."',
+                name: 'Deepika Sharma',
+                position: 'Parent of Class 10th Student',
+                text: '"Sampath Academy has a great learning environment. The teachers are very supportive and always ready to help. My daughter has improved significantly since joining."',
+                stars: 5,
+                },
+                {
+                name: 'Raj Karan',
+                position: 'Class 12th, State Board',
+                text: '"The coaching at Sampath Academy is top-notch. The faculty is knowledgeable and dedicated. I felt well-prepared for my board exams and achieved excellent results."',
+                stars: 5,
+                },
+                {
+                name: 'Dilip Kumar',
+                position: 'Class 12th, State Board',
+                text: '"I joined Sampath Academy in 2019, and it was the best decision I made. The focused coaching and doubt-clearing sessions helped me score 95% in my finals."',
                 stars: 5,
                 },
             ],
@@ -105,19 +117,29 @@ export const AboutPageData = {
                 desc: "The story of Sampath Academy began in 1985, founded by E. Sampathkumar with a vision for academic excellence. This phase laid a strong foundation with quality education.",
                 },
                 {
-                title: "Expansion Phase",
+                title: "Excelling in Physics",
                 year: 1990,
-                desc: "Sampath Academy expanded its offerings, introducing new courses and facilities, scaling impact while upholding high educational standards.",
+                desc: "Established reputation for producing numerous centum scorers in Physics board exams",
                 },
                 {
-                title: "Innovation Era",
+                title: "Expansion Era",
                 year: 2000,
-                desc: "We embraced technology and innovative teaching methods, integrating digital tools to enhance learning experiences for students.",
+                desc: "Expanded offerings to include Mathematics, Chemistry, and Biology with expert faculty.",
                 },
                 {
-                title: "Global Recognition",
-                year: 2015,
-                desc: "Our excellence earned global recognition through partnerships with international institutions and notable alumni success.",
+                title: "New Leadership",
+                year: 2016,
+                desc: "Mr. S. Akilesh took over management, combining institution leadership with Mathematics teaching.",
+                },
+                {
+                title: "2nd Branch - Poompukar Nagar",
+                year: 2023,
+                desc: "Opened our second branch in Poompukar Nagar to serve more students in the Kolathur area.",
+                },
+                {
+                title: "3rd Branch - Teachers Colony",
+                year: 2025,
+                desc: "Opened our third branch in Teachers Colony to provide quality education to more students.",
                 },
             ],
     },
@@ -167,7 +189,7 @@ export const AboutPageData = {
                 img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=300&fit=crop",
                 badgeColor: "bg-lime-500",
                 textColor: "text-lime-600",
-                desc: "Multi-layers offer enhanced depth and complexity by integrating various levels of functionality and protection. Our founder's vision combines innovative thinking with practical solutions.",
+                desc: "Founded Sampath Academy in 1985 with a vision to excel in physics education. His dedication and expertise laid the foundation for our institution's success, producing numerous centum scorers and inspiring generations of students.",
                 tagline: "Leading with Vision Since 1985",
             },
             {
@@ -176,7 +198,7 @@ export const AboutPageData = {
                 img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=300&fit=crop",
                 badgeColor: "bg-green-500",
                 textColor: "text-green-600",
-                desc: "Encryption safeguards your sensitive information by converting it into a secure code. Our co-founder brings modern security principles to education.",
+                desc: "Leading the institution since 2016, Mr. Akilesh combines management excellence with passionate teaching. His expertise in Mathematics and commitment to student success continues the legacy of educational excellence.",
                 tagline: "Innovating Education Technology",
             },
         ]
@@ -213,7 +235,7 @@ export const CoursesPageData = {
             [
                     {
                     id: 1,
-                    name: "RajKaran P",
+                    name: "Raul Roshan",
                     class: "11th State board, 2021-2022",
                     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
                     subjects: [
@@ -224,34 +246,34 @@ export const CoursesPageData = {
                     },
                     {
                     id: 2,
-                    name: "RajKaran P",
-                    class: "11th State board, 2021-2022",
+                    name: "Priya Sharma",
+                    class: "12th State board, 2021-2022",
                     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
                     subjects: [
-                        { name: "Physics", score: "98 / 100" },
+                        { name: "Physics", score: "92 / 100" },
                         { name: "Chemistry", score: "100 / 100" },
-                        { name: "Mathematics", score: "99 / 100" }
+                        { name: "Mathematics", score: "93 / 100" }
                     ]
                     },
                     {
                     id: 3,
-                    name: "RajKaran P",
-                    class: "11th State board, 2021-2022",
+                    name: "Arjun Kumar",
+                    class: "10th CBSE, 2021-2022",
                     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
                     subjects: [
-                        { name: "Physics", score: "98 / 100" },
+                        { name: "Physics", score: "99 / 100" },
                         { name: "Chemistry", score: "100 / 100" },
                         { name: "Mathematics", score: "99 / 100" }
                     ]
                     },
                     {
                     id: 4,
-                    name: "RajKaran P",
-                    class: "11th State board, 2021-2022",
+                    name: "Ravi Krishnan",
+                    class: "10th State board, 2021-2022",
                     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
                     subjects: [
-                        { name: "Physics", score: "98 / 100" },
-                        { name: "Chemistry", score: "100 / 100" },
+                        { name: "Physics", score: "96 / 100" },
+                        { name: "Chemistry", score: "95 / 100" },
                         { name: "Mathematics", score: "99 / 100" }
                     ]
                     },
@@ -268,13 +290,13 @@ export const CoursesPageData = {
                     },
                     {
                     id: 6,
-                    name: "RajKaran P",
-                    class: "11th State board, 2021-2022",
+                    name: "Sneha Reddy",
+                    class: "12th State board, 2022-2023",
                     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
                     subjects: [
                         { name: "Physics", score: "98 / 100" },
-                        { name: "Chemistry", score: "100 / 100" },
-                        { name: "Mathematics", score: "99 / 100" }
+                        { name: "Chemistry", score: "97 / 100" },
+                        { name: "Mathematics", score: "100 / 100" }
                     ]
                     }
             ],
