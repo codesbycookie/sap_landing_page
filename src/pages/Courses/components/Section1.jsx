@@ -1,20 +1,5 @@
-const Section1 = () => {
-  const courses = [
-    {
-      title: "CBSE",
-      subtitle: "A sub-Heading which should cover the whole and goes to second lines",
-      classes: "3 Classes",
-      subjects: "8 Subjects",
-      image: "https://images.unsplash.com/photo-1497636577773-f1231844b336?w=492&h=274&fit=crop"
-    },
-    {
-      title: "State Board TN",
-      subtitle: "A sub-Heading which should cover the whole and goes to second lines",
-      classes: "3 Classes",
-      subjects: "8 Subjects",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=492&h=274&fit=crop"
-    }
-  ];
+const Section1 = ({ content }) => {
+  const courses = content.courses;
 
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
@@ -25,10 +10,10 @@ const Section1 = () => {
             Choose your Path
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Course Structure
+            {content.title}
           </h1>
           <p className="text-lg text-gray-600">
-            Choose your board and explore our comprehensive offering.
+            {content.description}
           </p>
         </div>
 
@@ -87,7 +72,7 @@ const Section1 = () => {
 
               {/* Explore Button - Outside the card */}
               <button className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-200 flex items-center justify-center text-lg">
-                Explore all
+                {content.CTA[0]}
                 <svg
                   className="w-5 h-5 ml-3"
                   fill="none"

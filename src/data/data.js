@@ -182,3 +182,101 @@ export const AboutPageData = {
         ]
         }
 }
+
+export const CoursesPageData = {
+    section1:{
+            para:"Believe in your Potential",
+            title: "Our Courses",
+            description: "Explore our diverse range of courses designed to empower students and foster academic excellence.",
+            courses: [
+                {
+                    title: "CBSE",
+                    subtitle: "A sub-Heading which should cover the whole and goes to second lines",
+                    classes: "3 Classes",
+                    subjects: "8 Subjects",
+                    image: "https://images.unsplash.com/photo-1497636577773-f1231844b336?w=492&h=274&fit=crop"
+                },
+                {
+                title: "State Board TN",
+                subtitle: "A sub-Heading which should cover the whole and goes to second lines",
+                classes: "3 Classes",
+                subjects: "8 Subjects",
+                image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=492&h=274&fit=crop"
+                }
+                    ],
+            CTA:["Explore All"]
+    },
+    section2:{
+        title:"Believe in your Potential",
+        description:"We empower students to believe in their abilities and strive for excellence.",
+        achievements:
+            [
+                    {
+                    id: 1,
+                    name: "RajKaran P",
+                    class: "11th State board, 2021-2022",
+                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
+                    subjects: [
+                        { name: "Physics", score: "98 / 100" },
+                        { name: "Chemistry", score: "100 / 100" },
+                        { name: "Mathematics", score: "99 / 100" }
+                    ]
+                    },
+                    {
+                    id: 2,
+                    name: "RajKaran P",
+                    class: "11th State board, 2021-2022",
+                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
+                    subjects: [
+                        { name: "Physics", score: "98 / 100" },
+                        { name: "Chemistry", score: "100 / 100" },
+                        { name: "Mathematics", score: "99 / 100" }
+                    ]
+                    },
+                    {
+                    id: 3,
+                    name: "RajKaran P",
+                    class: "11th State board, 2021-2022",
+                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
+                    subjects: [
+                        { name: "Physics", score: "98 / 100" },
+                        { name: "Chemistry", score: "100 / 100" },
+                        { name: "Mathematics", score: "99 / 100" }
+                    ]
+                    },
+                    {
+                    id: 4,
+                    name: "RajKaran P",
+                    class: "11th State board, 2021-2022",
+                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
+                    subjects: [
+                        { name: "Physics", score: "98 / 100" },
+                        { name: "Chemistry", score: "100 / 100" },
+                        { name: "Mathematics", score: "99 / 100" }
+                    ]
+                    },
+                    {
+                    id: 5,
+                    name: "RajKaran P",
+                    class: "11th State board, 2021-2022",
+                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
+                    subjects: [
+                        { name: "Physics", score: "98 / 100" },
+                        { name: "Chemistry", score: "100 / 100" },
+                        { name: "Mathematics", score: "99 / 100" }
+                    ]
+                    },
+                    {
+                    id: 6,
+                    name: "RajKaran P",
+                    class: "11th State board, 2021-2022",
+                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
+                    subjects: [
+                        { name: "Physics", score: "98 / 100" },
+                        { name: "Chemistry", score: "100 / 100" },
+                        { name: "Mathematics", score: "99 / 100" }
+                    ]
+                    }
+            ],
+    } 
+}

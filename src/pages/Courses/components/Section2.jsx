@@ -1,76 +1,9 @@
 import { useEffect, useState } from 'react';
 
-const Section2 = () => {
+const Section2 = ({content}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const achievements = [
-    {
-      id: 1,
-      name: "RajKaran P",
-      class: "11th State board, 2021-2022",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
-      subjects: [
-        { name: "Physics", score: "98 / 100" },
-        { name: "Chemistry", score: "100 / 100" },
-        { name: "Mathematics", score: "99 / 100" }
-      ]
-    },
-    {
-      id: 2,
-      name: "RajKaran P",
-      class: "11th State board, 2021-2022",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
-      subjects: [
-        { name: "Physics", score: "98 / 100" },
-        { name: "Chemistry", score: "100 / 100" },
-        { name: "Mathematics", score: "99 / 100" }
-      ]
-    },
-    {
-      id: 3,
-      name: "RajKaran P",
-      class: "11th State board, 2021-2022",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
-      subjects: [
-        { name: "Physics", score: "98 / 100" },
-        { name: "Chemistry", score: "100 / 100" },
-        { name: "Mathematics", score: "99 / 100" }
-      ]
-    },
-    {
-      id: 4,
-      name: "RajKaran P",
-      class: "11th State board, 2021-2022",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
-      subjects: [
-        { name: "Physics", score: "98 / 100" },
-        { name: "Chemistry", score: "100 / 100" },
-        { name: "Mathematics", score: "99 / 100" }
-      ]
-    },
-    {
-      id: 5,
-      name: "RajKaran P",
-      class: "11th State board, 2021-2022",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
-      subjects: [
-        { name: "Physics", score: "98 / 100" },
-        { name: "Chemistry", score: "100 / 100" },
-        { name: "Mathematics", score: "99 / 100" }
-      ]
-    },
-    {
-      id: 6,
-      name: "RajKaran P",
-      class: "11th State board, 2021-2022",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=340&h=405&fit=crop",
-      subjects: [
-        { name: "Physics", score: "98 / 100" },
-        { name: "Chemistry", score: "100 / 100" },
-        { name: "Mathematics", score: "99 / 100" }
-      ]
-    }
-  ];
+  const achievements = content.achievements;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -90,14 +23,14 @@ const Section2 = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <p className="text-center text-green-600 font-semibold mb-2">
-          Believe in your Potential        
+          {content.para}
         </p>
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
-            Achievements That Speak
+            {content.title}
           </h1>
           <p className="text-base text-gray-600">
-            Each result is more than a number — it's a story of hard work, growth, and dedication.
+            {content.description}
           </p>
         </div>
 
