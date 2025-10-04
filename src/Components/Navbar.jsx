@@ -26,7 +26,7 @@ const Navbar = () => {
     { name: "Home", to: "/" },
     { name: "About", to: "/about", hasDropdown: true }, // Dropdown parent
     { name: "Careers", to: "/careers" },
-    { name: "Blog", to: "/blogs" },
+    // { name: "Blog", to: "/blogs" },
     { name: "Contact", to: "/contact" },
   ];
 

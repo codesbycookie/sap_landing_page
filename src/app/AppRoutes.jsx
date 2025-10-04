@@ -6,6 +6,7 @@ import Gallery from '../pages/Gallery/Gallery';
 import Courses from '../pages/Courses/Courses';
 import Blogs from '../pages/Blogs/Blogs';
 import Careers from '../pages/Careers/Careers';
+import Error from '../pages/Error404/Error'; // Import the Error component
 
 // Optional: Basic Layout Component
 const Layout = ({ children }) => {
@@ -25,8 +26,9 @@ export default function AppRoutes() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/blogs" element={<Blogs />} />
+        {/* <Route path="/blogs" element={<Blogs />} /> */}
         <Route path="/careers" element={<Careers />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </Layout>
   );
