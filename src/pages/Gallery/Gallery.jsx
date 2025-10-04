@@ -1,66 +1,104 @@
-import React from 'react'
+import React from "react";
 
-export default function Gallery() {
+// Base images that will be repeated to fill the grid
+const baseImages = [
+  { src: "/Gallery-1.jpg", alt: "Students in classroom" },
+  { src: "/Gallery-2.jpg", alt: "Science lab session" },
+  { src: "/Gallery-3.jpg", alt: "Library study area" },
+  { src: "/Gallery-1.jpg", alt: "Sports activity" },
+  { src: "/Gallery-2.jpg", alt: "Award ceremony" },
+  { src: "/Gallery-3.jpg", alt: "Campus view" },
+];
+
+// Generate more images by repeating the base set
+const generateGalleryImages = () => {
+  const galleryImages = [];
+  const repetitions = 12; // Total number of images needed
+  
+  for (let i = 0; i < repetitions; i++) {
+    const baseImage = baseImages[i % baseImages.length];
+    // Alternate between different span configurations for visual interest
+    const spanConfigs = [
+      { colSpan: 1, rowSpan: 1 },
+      { colSpan: 1, rowSpan: 1 },
+      { colSpan: 2, rowSpan: 1 },
+      { colSpan: 1, rowSpan: 2 },
+      { colSpan: 2, rowSpan: 2 },
+      { colSpan: 1, rowSpan: 1 },
+    ];
+    
+    galleryImages.push({
+      ...baseImage,
+      ...spanConfigs[i % spanConfigs.length],
+      id: i,
+    });
+  }
+  
+  return galleryImages;
+};
+
+const galleryImages = generateGalleryImages();
+
+const Gallery = () => {
   return (
-    <div className="h-screen">
-      <div className="flex flex-col item-start justify-center md:items-center my-5 p-5">
-      <p className='text-md md:text-lg text-gray-400'>Belive in your Potential</p>
-      <h1 className='text-2xl md:text-4xl text-green-500 font-semibold'>Ambience of Sampath Academy</h1>
-      <p className='text-md md:text-lg text-gray-400'>Each result is more than a number — it’s a story of hard work, growth, and dedication.</p>
-      </div>
-      <div className="flex h-full w-full items-center justify-center">
-        <div className="grid h-full w-full gap-4 p-2 grid-cols-4 grid-rows-7 rounded-lg shadow-md">
-          
-          <div className="col-span-2 row-span-1 rounded-lg shadow-md overflow-hidden">
-            <img 
-              src="/Gallery-3.jpg" 
-              alt="Salmon" 
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          <div className="col-span-2 row-span-1 rounded-lg shadow-md overflow-hidden">
-            <img 
-              src="/Gallery-1.jpg" 
-              alt="Broccoli" 
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          <div className="col-span-1 row-span-4 rounded-lg shadow-md overflow-hidden">
-            <img 
-              src="/Gallery-3.jpg" 
-              alt="Tamago" 
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          <div className="col-span-2 row-span-4 rounded-lg shadow-md overflow-hidden">
-            <img 
-              src="/Gallery-2.jpg" 
-              alt="Pork" 
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          <div className="col-span-1 row-span-4 rounded-lg shadow-md overflow-hidden">
-            <img 
-              src="/Gallery-1.jpg" 
-              alt="Edamame" 
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          <div className="col-span-4 row-span-4 rounded-lg shadow-md overflow-hidden">
-            <img 
-              src="/Gallery-1.jpg" 
-              alt="Tomato" 
-              className="h-full w-full object-cover"
-            />
-          </div>
-
+    <section className="w-full min-h-screen bg-gradient-to-br from-gray-50 to-green-50 py-12 px-4 md:px-8 lg:px-16 flex flex-col">
+      {/* Enhanced Header */}
+      <div className="text-center mb-12 md:mb-16">
+        <div className="inline-flex items-center gap-2 text-green-600 mb-3">
+          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+          <p className="text-sm md:text-base font-medium tracking-wide">Believe in your Potential</p>
+          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+          Ambience of <span className="text-green-600">Sampath Academy</span>
+        </h1>
+        <div className="w-24 h-1 bg-green-500 mx-auto mb-6 rounded-full"></div>
+        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Each result is more than a number — it's a story of hard work, growth, and dedication 
+          that shapes our students' journey to success.
+        </p>
       </div>
-    </div>
-  )
-}
+
+      {/* Dense Bento Grid - No White Space */}
+      <div className="grid flex-1 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[150px] gap-4 md:gap-5 max-w-7xl mx-auto w-full">
+        {galleryImages.map((img) => (
+          <div
+            key={img.id}
+            className={`relative rounded-xl overflow-hidden shadow-lg group 
+              ${img.colSpan === 2 ? 'lg:col-span-2' : ''}
+              ${img.rowSpan === 2 ? 'row-span-2' : ''}
+              transform transition-all duration-500 hover:scale-[1.03] hover:shadow-xl
+              border border-white/30`}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            
+            {/* Enhanced Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-xl">
+              <div className="absolute bottom-3 left-3 right-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <h3 className="text-white font-semibold text-sm md:text-base mb-1 truncate">{img.alt}</h3>
+                <div className="w-6 h-0.5 bg-green-400 mb-1 rounded-full"></div>
+                <p className="text-gray-200 text-xs">Sampath Academy</p>
+              </div>
+            </div>
+            
+            {/* Shine Effect */}
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-xl"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* View More Button */}
+      <div className="text-center mt-12">
+        <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          View More Photos
+        </button>
+      </div>
+    </section>
+  );
+};
+
+export default Gallery;
