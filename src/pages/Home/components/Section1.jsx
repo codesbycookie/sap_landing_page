@@ -60,12 +60,12 @@ const Section1 = ({ content }) => {
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 md:gap-6">
             <Link 
             to="/courses"
-            className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-green-600 rounded-xl shadow-lg hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1 font-semibold text-base sm:text-lg">
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#8dc540] rounded-xl shadow-lg hover:bg-[#8dc540] hover:text-white transition-all duration-300 transform hover:-translate-y-1 font-semibold text-base sm:text-lg">
              {content.CTA[0]}
             </Link>
             <Link 
             to="/admission" 
-            className="px-6 sm:px-8 py-3 sm:py-4 bg-green-600 text-white rounded-xl shadow-lg hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 font-semibold text-base sm:text-lg">
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-[#8dc540] text-white rounded-xl shadow-lg hover:bg-[#8dc540] hover:text-white transition-all duration-300 transform hover:-translate-y-1 font-semibold text-base sm:text-lg">
               {content.CTA[1]}
             </Link>
           </div>

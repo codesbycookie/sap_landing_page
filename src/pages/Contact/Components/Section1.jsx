@@ -11,20 +11,20 @@ export default function Section1() {
             {/* Location */}
             <div>
               <p className='text-gray-500 text-lg mb-3'>Join the Journey</p>
-              <h3 className="font-bold text-3xl text-gray-800 mb-3">Contact Us</h3>
+              <h3 className="font-bold text-3xl text-[#8dc540] mb-3">Contact Us</h3>
               <p className='text-gray-500 text-lg'>We’re here to help with any questions or feedback about us !!</p>
             </div>
             <div className="flex gap-5 mt-8">
-            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-green-600 transition-colors duration-300">
+            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-[#8dc540] transition-colors duration-300">
               <IconBrandX size={20} />
             </a>
-            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-green-600 transition-colors duration-300">
+            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-[#8dc540] transition-colors duration-300">
               <IconBrandFacebook size={20} />
             </a>
-            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-green-600 transition-colors duration-300">
+            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-[#8dc540] transition-colors duration-300">
               <IconBrandInstagram size={20} />
             </a>
-            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-green-600 transition-colors duration-300">
+            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-[#8dc540] transition-colors duration-300">
               <IconBrandYoutube size={20} />
             </a>
           </div>
@@ -34,7 +34,7 @@ export default function Section1() {
         {/* Right side - form*/}
         <div className="md:col-span-2 space-y-8">
           <div className="space-y-3">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#8dc540]">
               Contact Us
             </h1>
             <p className="text-sm text-gray-600 font-medium">
@@ -82,7 +82,7 @@ export default function Section1() {
           </div>
 
           {/* Submit Button */}
-          <button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-4 rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+          <button className="w-full bg-[#8dc540] text-white font-semibold py-4 rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
             Submit
           </button>
         </div>

@@ -50,7 +50,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link
               to="/"
-              className="text-xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent"
+              className="text-xl font-bold bg-gradient-to-r from-[#8dc540] to-[#7cbf3a] bg-clip-text text-transparent"
             >
               <img src="/logo.png" alt="" width={100} height={100} />
             </Link>
@@ -106,7 +106,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Link
               to="/contact"
-              className="ml-8 px-4 py-2 rounded-md bg-gradient-to-r from-green-500 to-green-600 text-white font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md hover:shadow-lg"
+              className="ml-8 px-4 py-2 rounded-md bg-[#8dc540] text-white font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Admission
             </Link>

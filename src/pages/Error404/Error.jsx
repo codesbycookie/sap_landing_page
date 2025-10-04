@@ -6,7 +6,7 @@ const Error = () => {
     <section className="w-full min-h-screen bg-gradient-to-br from-gray-50 to-green-50 flex items-center justify-center py-12 px-4 md:px-8 lg:px-16">
       <div className="max-w-2xl mx-auto text-center">
         {/* Decorative Elements */}
-        <div className="inline-flex items-center gap-2 text-green-600 mb-6">
+        <div className="inline-flex items-center gap-2 text-[#8dc540] mb-6">
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
           <p className="text-sm md:text-base font-medium tracking-wide">Sampath Academy</p>
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -17,7 +17,7 @@ const Error = () => {
           <div className="text-8xl md:text-9xl font-bold text-gray-800 opacity-10 absolute inset-0 -z-10">
             404
           </div>
-          <div className="text-6xl md:text-8xl font-bold text-green-600 mb-4 relative">
+          <div className="text-6xl md:text-8xl font-bold text-[#8dc540] mb-4 relative">
             4
             <span className="text-yellow-500 mx-2">0</span>
             4
@@ -50,7 +50,7 @@ const Error = () => {
         {/* Action Button */}
         <Link 
           to="/"
-          className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          className="inline-flex items-center gap-2 bg-[#8dc540] hover:bg-[#7cbf3a] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
         >
           <svg 
             className="w-5 h-5" 
@@ -73,7 +73,7 @@ const Error = () => {
           Can't find what you're looking for?{" "}
           <a 
             href="/contact" 
-            className="text-green-600 hover:text-green-700 font-medium underline"
+            className="text-[#8dc540] hover:text-[#7cbf3a] font-medium underline"
           >
             Contact our support team
           </a>

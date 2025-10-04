@@ -25,7 +25,7 @@ const Section5 = ({content}) => {
       <div className="text-center mb-12 z-10">
         <h2 className="text-3xl lg:text-5xl font-extrabold text-gray-900 mb-4">
           {content.title[0]}{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8dc540] to-[#8dc540]">
             {content.title[1]}
           </span>
         </h2>
@@ -42,7 +42,7 @@ const Section5 = ({content}) => {
       </div>
 
       {/* Bottom Glow Line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent opacity-50 animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#8dc540] to-transparent opacity-50 animate-pulse"></div>
     </section>
   );
 };
@@ -64,7 +64,7 @@ const FounderCard = ({ founder }) => (
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
 
-        <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-lime-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+        <div className="absolute top-4 right-4 bg-[#8dc540] text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
           {founder.role}
         </div>
       </div>
@@ -81,7 +81,7 @@ const FounderCard = ({ founder }) => (
           <div className="flex items-center justify-center space-x-4">
             <div className={`w-2 h-2 ${founder.badgeColor} rounded-full animate-pulse`}></div>
             <span className="text-xs text-gray-500 font-mono">{founder.tagline}</span>
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-[#8dc540] rounded-full animate-pulse"></div>
           </div>
         </div>
       </div>

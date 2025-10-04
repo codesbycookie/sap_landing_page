@@ -31,7 +31,7 @@ const Section3 = ({content}) => {
       <div className="text-center mb-8 sm:mb-10 lg:mb-12">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
           {content.title[0]}{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6FD118] to-[#4CAF50]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8dc540] to-[#8dc540]">
             {content.title[1]}
           </span>
         </h2>
@@ -75,7 +75,7 @@ const Section3 = ({content}) => {
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center sm:text-left">
                       {story.title}
                     </h3>
-                    <div className="bg-white border-2 border-[#6FD118] text-[#6FD118] px-4 sm:px-6 py-2 rounded-full text-sm font-bold shadow-md">
+                    <div className="bg-white border-2 border-[#8dc540] text-[#8dc540] px-4 sm:px-6 py-2 rounded-full text-sm font-bold shadow-md">
                       {story.year}
                     </div>
                   </div>
@@ -130,7 +130,7 @@ const Section3 = ({content}) => {
                     <h3 className="text-2xl font-bold text-gray-900">
                       {story.title}
                     </h3>
-                    <div className="bg-white border-2 border-[#6FD118] text-[#6FD118] px-6 py-2 rounded-full text-sm font-bold shadow-md">
+                    <div className="bg-white border-2 border-[#8dc540] text-[#8dc540] px-6 py-2 rounded-full text-sm font-bold shadow-md">
                       {story.year}
                     </div>
                   </div>
@@ -155,7 +155,7 @@ const Section3 = ({content}) => {
             key={index}
             onClick={() => setActiveIndex(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              activeIndex === index ? 'bg-[#6FD118] w-4' : 'bg-gray-300'
+              activeIndex === index ? 'bg-[#8dc540] w-4' : 'bg-gray-300'
             }`}
           />
         ))}
@@ -168,7 +168,7 @@ const Section3 = ({content}) => {
             key={index}
             onClick={() => setActiveIndex(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              activeIndex === index ? 'bg-[#6FD118] w-4' : 'bg-gray-300'
+              activeIndex === index ? 'bg-[#8dc540] w-4' : 'bg-gray-300'
             }`}
           />
         ))}

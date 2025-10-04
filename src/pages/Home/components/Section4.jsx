@@ -28,7 +28,7 @@ const Section4 = ({ content }) => {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
             <Link
             to="/admission" 
-            className="px-6 sm:px-8 py-3 sm:py-4 bg-[#6FD118] text-black font-medium rounded-lg hover:bg-[#5EBF0F] transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-[#8dc540] text-black font-medium rounded-lg hover:bg-[#5EBF0F] hover:text-[#fff] transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
               {content.CTA[0]}
             </Link>
             <Link

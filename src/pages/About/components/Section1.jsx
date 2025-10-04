@@ -33,9 +33,9 @@ const Section1 = ({content}) => {
           <h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6FD118] to-[#4CAF50]">{content.title[0]}</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8dc540] to-[#4CAF50]">{content.title[0]}</span>
             <br />
-            <span className="text-gray-600">{content.title[1]}</span>
+            <span className="text-[#fac116]">{content.title[1]}</span>
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-6 sm:mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed">
             {content.description}
@@ -49,7 +49,7 @@ const Section1 = ({content}) => {
             </Link>
             <Link
               to="/careers"
-              className="px-6 sm:px-8 py-3 bg-[#6FD118] text-white font-medium rounded-md hover:bg-[#5EBF0F] transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
+              className="px-6 sm:px-8 py-3 bg-[#8dc540] text-white font-medium rounded-md hover:bg-[#5EBF0F] transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
             >
               {content.CTA[1]}
             </Link>

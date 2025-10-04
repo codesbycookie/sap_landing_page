@@ -8,7 +8,7 @@ export default function Section1() {
         {/* Left side - Form */}
         <div className="md:col-span-2 space-y-8">
           <div className="space-y-3">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold bg-[#8dc540] bg-clip-text text-transparent">
               Apply Now
             </h1>
             <p className="text-sm text-gray-600 font-medium">
@@ -69,7 +69,7 @@ export default function Section1() {
           </div>
 
           {/* Submit Button */}
-          <button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-4 rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+          <button className="w-full bg-[#8dc540] text-white font-semibold py-4 rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
             Submit Application
           </button>
         </div>
@@ -82,15 +82,15 @@ export default function Section1() {
               <h3 className="font-bold text-lg text-gray-800 mb-3">Location</h3>
               <ul className="text-gray-600 space-y-2">
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#8dc540] rounded-full mr-3"></span>
                   Kolathur
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#8dc540] rounded-full mr-3"></span>
                   Poompuhar Nagar
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#8dc540] rounded-full mr-3"></span>
                   Teachers Colony
                 </li>
               </ul>
@@ -101,11 +101,11 @@ export default function Section1() {
               <h3 className="font-bold text-lg text-gray-800 mb-3">Support</h3>
               <div className="space-y-2 text-gray-600">
                 <p className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#8dc540] rounded-full mr-3"></span>
                   hello@gmail.com
                 </p>
                 <p className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#8dc540] rounded-full mr-3"></span>
                   +91 6232115122
                 </p>
               </div>
@@ -114,16 +114,16 @@ export default function Section1() {
 
           {/* Social icons */}
           <div className="flex gap-5 mt-8">
-            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-green-600 transition-colors duration-300">
+            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-[#8dc540] transition-colors duration-300">
               <IconBrandX size={20} />
             </a>
-            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-green-600 transition-colors duration-300">
+            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-[#8dc540] transition-colors duration-300">
               <IconBrandFacebook size={20} />
             </a>
-            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-green-600 transition-colors duration-300">
+            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-[#8dc540] transition-colors duration-300">
               <IconBrandInstagram size={20} />
             </a>
-            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-green-600 transition-colors duration-300">
+            <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-green-100 hover:text-[#8dc540] transition-colors duration-300">
               <IconBrandYoutube size={20} />
             </a>
           </div>

@@ -44,15 +44,15 @@ const Gallery = () => {
     <section className="w-full min-h-screen bg-gradient-to-br from-gray-50 to-green-50 py-12 px-4 md:px-8 lg:px-16 flex flex-col">
       {/* Enhanced Header */}
       <div className="text-center mb-12 md:mb-16">
-        <div className="inline-flex items-center gap-2 text-green-600 mb-3">
-          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+        <div className="inline-flex items-center gap-2 text-[#8dc540] mb-3">
+          <div className="w-3 h-3 bg-[#8dc540] rounded-full"></div>
           <p className="text-sm md:text-base font-medium tracking-wide">Believe in your Potential</p>
-          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-[#8dc540] rounded-full"></div>
         </div>
         <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
-          Ambience of <span className="text-green-600">Sampath Academy</span>
+          Ambience of <span className="text-[#8dc540]">Sampath Academy</span>
         </h1>
-        <div className="w-24 h-1 bg-green-500 mx-auto mb-6 rounded-full"></div>
+        <div className="w-24 h-1 bg-[#8dc540] mx-auto mb-6 rounded-full"></div>
         <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Each result is more than a number — it's a story of hard work, growth, and dedication 
           that shapes our students' journey to success.
@@ -89,13 +89,6 @@ const Gallery = () => {
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-xl"></div>
           </div>
         ))}
-      </div>
-
-      {/* View More Button */}
-      <div className="text-center mt-12">
-        <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-          View More Photos
-        </button>
       </div>
     </section>
   );

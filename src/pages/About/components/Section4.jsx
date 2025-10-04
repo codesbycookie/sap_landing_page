@@ -26,7 +26,7 @@ const Section4 = ({content}) => {
         {[...Array(12)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-[#6FD118] rounded-full opacity-20"
+            className="absolute w-2 h-2 bg-[#8dc540] rounded-full opacity-20"
             style={{
               top: `${20 + Math.random() * 60}%`,
               left: `${20 + Math.random() * 60}%`,
@@ -55,16 +55,16 @@ const Section4 = ({content}) => {
           {/* Center Solar System */}
           <div className="absolute top-1/2 left-1/2 z-30 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
             <div className="relative flex items-center justify-center">
-              <div className="absolute w-28 h-28 border-2 border-[#6FD118] rounded-full animate-spin-slow opacity-60"></div>
+              <div className="absolute w-28 h-28 border-2 border-[#8dc540] rounded-full animate-spin-slow opacity-60"></div>
               <div className="w-24 h-24 border-2 border-gray-900 rounded-full flex items-center justify-center bg-white/80 backdrop-blur-sm shadow-xl">
                 <div className="w-7 h-7 bg-gradient-to-br from-gray-900 to-gray-700 rounded-full shadow-lg animate-pulse"></div>
               </div>
               <div
-                className="absolute w-3 h-3 bg-[#6FD118] rounded-full animate-orbit"
+                className="absolute w-3 h-3 bg-[#8dc540] rounded-full animate-orbit"
                 style={{ animationDelay: "0s" }}
               ></div>
               <div
-                className="absolute w-2 h-2 bg-[#4CAF50] rounded-full animate-orbit"
+                className="absolute w-2 h-2 bg-[#8dc540] rounded-full animate-orbit"
                 style={{ animationDelay: "1s", animationDuration: "3s" }}
               ></div>
             </div>
@@ -78,7 +78,7 @@ const Section4 = ({content}) => {
               transition-all duration-500 hover:scale-105 hover:shadow-[0_0_25px_rgba(111,209,24,0.4)]`}
             >
               {/* Icon */}
-              <div className="relative mx-auto mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-[#6FD118] to-[#4CAF50] flex items-center justify-center shadow-lg group-hover:shadow-[0_0_25px_rgba(111,209,24,0.6)] transition-all duration-500">
+              <div className="relative mx-auto mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-[#8dc540] to-[#8dc540] flex items-center justify-center shadow-lg group-hover:shadow-[0_0_25px_rgba(111,209,24,0.6)] transition-all duration-500">
                 <svg
                   className="w-9 h-9 text-white transition-transform duration-500 group-hover:scale-110"
                   fill="currentColor"
@@ -99,7 +99,7 @@ const Section4 = ({content}) => {
               </p>
 
               {/* Hover underline */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-[#6FD118] to-[#4CAF50] rounded-full group-hover:w-20 transition-all duration-500"></div>
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-[#8dc540] to-[#8dc540] rounded-full group-hover:w-20 transition-all duration-500"></div>
             </div>
           ))}
         </div>

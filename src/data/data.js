@@ -23,7 +23,7 @@ export const HomePageData = {
                     "to nurture your passion for learning.",
                 ],
                 bg: "#E2F5D0",
-                accentColor: "#4CAF50",
+                accentColor: "#8dc540",
                 },
                 {
                 title: "Advanced Learning Opportunities",
@@ -33,7 +33,7 @@ export const HomePageData = {
                     "students through complex concepts to ensure mastery and confidence.",
                 ],
                 bg: "#E2F5D0",
-                accentColor: "#4CAF50",
+                accentColor: "#8dc540",
                 },
                 {
                 title: "Tailored Support for Success",
@@ -43,7 +43,7 @@ export const HomePageData = {
                     "achievement rates and supportive environment.",
                 ],
                 bg: "#E2F5D0",
-                accentColor: "#4CAF50",
+                accentColor: "#8dc540",
                 },
             ],
     },
