@@ -1,28 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-const Section3 = () => {
-  const stories = [
-    {
-      title: "The Foundation",
-      year: 1985,
-      desc: "The story of Sampath Academy began in 1985, founded by E. Sampathkumar with a vision for academic excellence. This phase laid a strong foundation with quality education.",
-    },
-    {
-      title: "Expansion Phase",
-      year: 1990,
-      desc: "Sampath Academy expanded its offerings, introducing new courses and facilities, scaling impact while upholding high educational standards.",
-    },
-    {
-      title: "Innovation Era",
-      year: 2000,
-      desc: "We embraced technology and innovative teaching methods, integrating digital tools to enhance learning experiences for students.",
-    },
-    {
-      title: "Global Recognition",
-      year: 2015,
-      desc: "Our excellence earned global recognition through partnerships with international institutions and notable alumni success.",
-    },
-  ];
+const Section3 = ({content}) => {
+  const stories = content.Story;
 
   const extendedStories = [...stories, ...stories]; // duplicate for smooth loop
   const [activeIndex, setActiveIndex] = useState(0);
@@ -51,9 +30,9 @@ const Section3 = () => {
     <section className="w-full min-h-screen flex flex-col items-center justify-center bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="text-center mb-8 sm:mb-10 lg:mb-12">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
-          The Chapters We've{" "}
+          {content.title[0]}{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6FD118] to-[#4CAF50]">
-            Reached So Far
+            {content.title[1]}
           </span>
         </h2>
       </div>

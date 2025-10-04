@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Section1 = () => {
+const Section1 = ({content}) => {
   return (
     <section
       className="w-full min-h-screen flex items-center justify-center bg-white overflow-hidden relative"
@@ -33,25 +33,25 @@ const Section1 = () => {
           <h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6FD118] to-[#4CAF50]">Discover Sampath</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6FD118] to-[#4CAF50]">{content.title[0]}</span>
             <br />
-            <span className="text-gray-600">Academy</span>
+            <span className="text-gray-600">{content.title[1]}</span>
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-6 sm:mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed">
-            A Legacy of Educational Excellence Since 1985 - Nurturing Young Minds in Kolathur, Chennai
+            {content.description}
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4">
             <Link
               to="/courses"
               className="px-6 sm:px-8 py-3 bg-white text-gray-700 font-medium border border-gray-300 rounded-md hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
             >
-              Explore Courses
+              {content.CTA[0]}
             </Link>
             <Link
               to="/careers"
               className="px-6 sm:px-8 py-3 bg-[#6FD118] text-white font-medium rounded-md hover:bg-[#5EBF0F] transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
             >
-              Join as Staff
+              {content.CTA[1]}
             </Link>
           </div>
         </div>
@@ -76,7 +76,7 @@ const Section1 = () => {
             {/* Main Image - Bigger */}
             <div className="w-full h-60 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100">
               <img
-                src="/Gallery-1.jpg"
+                src={content.ImgUrl}
                 alt="Sampath Academy Campus"
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 onError={(e) => {

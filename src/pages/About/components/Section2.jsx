@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 
-const Section2 = () => {
-  const stats = [
-    { id: 1, value: "40+", label: "Years of Academic Excellence" },
-    { id: 2, value: "95%", label: "Student Success Rate" },
-    { id: 3, value: "5000+", label: "Graduates Empowered" },
-  ];
+const Section2 = ({content}) => {
+  const stats = content.stats;
 
   useEffect(() => {
     const style = document.createElement("style");
@@ -57,7 +53,7 @@ const Section2 = () => {
           className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl max-w-[800px] font-extrabold text-gray-900 mb-6 sm:mb-10 lg:mb-12 text-center lg:text-left animate-fade-in"
           style={{ animationDelay: "0.2s" }}
         >
-          40+ Years of Academic Excellence and Legacy
+          {content.title}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {stats.map((stat, index) => (
