@@ -1,26 +1,9 @@
-import React from 'react';
 
-const Section5 = () => {
-  const testimonials = [
-    {
-      name: 'Rahul Sharma',
-      position: 'State Topper, Science Stream',
-      text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."',
-      stars: 5,
-    },
-    {
-      name: 'Priya Patel',
-      position: 'National Merit Scholar',
-      text: '"Our expert faculty helped me and secure top ranks in board exams."',
-      stars: 5,
-    },
-    {
-      name: 'Name Surname',
-      position: 'Company position',
-      text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."',
-      stars: 5,
-    },
-  ];
+import React from 'react';
+import { Link} from 'react-router-dom';
+
+const Section5 = ({content}) => {
+  const testimonials = content.testimonials;
 
   return (
     <>
@@ -64,24 +47,25 @@ const Section5 = () => {
             <h2
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 urbanist-700"
             >
-              Student Success Stories
+              {content.title}
             </h2>
             <p
               className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 leading-relaxed urbanist-400"
             >
-              Lorem ipsum sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+              {content.description}
             </p>
-            <button
+            <Link
+              to="/about"
               className="bg-white text-gray-800 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base hover:bg-gray-100 transition-all duration-300 urbanist-600 mb-6 sm:mb-8 w-fit shadow-md hover:shadow-lg"
             >
               Know More
-            </button>
+            </Link>
 
             {/* Image Section */}
             <div className="mt-auto">
               <div className="w-full h-[200px] sm:h-[250px] rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="../../../../public/Gallery-2.jpg" 
+                  src={content.ImgUrl} 
                   alt="Student success stories" 
                   className="w-full h-full object-cover"
                 />

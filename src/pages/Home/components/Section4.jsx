@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Section4 = () => {
+const Section4 = ({ content }) => {
   return (
     <section className="relative w-full min-h-[200px] sm:min-h-[250px] md:min-h-[300px] flex items-center justify-center bg-white py-16 sm:py-20 md:py-24">
       {/* Card */}
@@ -16,22 +17,25 @@ const Section4 = () => {
           {/* Left Content: Heading + Subtext */}
           <div className="flex flex-col text-center lg:text-left w-full lg:w-auto">
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 urbanist-700">
-              Start Your Academic Journey Today
+              {content.title}
             </h3>
             <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl urbanist-400 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              vel urna at dui cursus ullamcorper.
+              {content.description}
             </p>
           </div>
 
           {/* Right Content: Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-[#6FD118] text-black font-medium rounded-lg hover:bg-[#5EBF0F] transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
-              Explore Courses
-            </button>
-            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-300 text-black font-medium rounded-lg hover:bg-gray-400 transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
-              Contact Us
-            </button>
+            <Link
+            to="/admission" 
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-[#6FD118] text-black font-medium rounded-lg hover:bg-[#5EBF0F] transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
+              {content.CTA[0]}
+            </Link>
+            <Link
+              to="/contact"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-300 text-black font-medium rounded-lg hover:bg-gray-400 transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
+              {content.CTA[1]}
+            </Link>
           </div>
         </div>
       </div>

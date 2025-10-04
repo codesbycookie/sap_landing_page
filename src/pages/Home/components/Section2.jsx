@@ -1,11 +1,7 @@
 import React from "react";
 
-const Section2 = () => {
-  const stats = [
-    { id: 1, value: "40+", label: "Academic excellence in Years" },
-    { id: 2, value: "95%", label: "Years of Education" },
-    { id: 3, value: "5000+", label: "Students success" },
-  ];
+const Section2 = ({ content }) => {
+  const stats = content.stats;
 
   return (
     <div className="min-h-[40vh] bg-[#E2F5D0] flex flex-col justify-center items-center px-4 sm:px-6 md:px-8 lg:px-14 py-12 sm:py-16 lg:py-18">
@@ -14,7 +10,7 @@ const Section2 = () => {
         {/* Heading */}
         <div className="flex flex-col gap-10 text-center lg:text-left mb-8 sm:mb-10 lg:mb-12">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 lg:mb-6 urbanist-700">
-            The Legacy We Built Over Years
+            {content.title}
           </h1>
 
           {/* Stats Grid */}

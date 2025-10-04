@@ -1,6 +1,6 @@
 import React from "react";
-
-const Section1 = () => {
+import { Link } from "react-router-dom";
+const Section1 = ({ content }) => {
   const images = [
     "/Gallery-1.jpg",
     "/Gallery-2.jpg",
@@ -52,20 +52,22 @@ const Section1 = () => {
       <div className="relative text-center max-w-4xl px-4 md:px-6 z-50">
         <div className="p-6 sm:p-8 md:p-12">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            35+ Years of Academic Excellence
+            {content.title}
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto">
-            Empowering students to achieve their highest potential through
-            personalized learning and expert guidance. Join a legacy of academic
-            success and transformative education.
+            {content.description}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 md:gap-6">
-            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-green-600 rounded-xl shadow-lg hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1 font-semibold text-base sm:text-lg">
-              Explore Programs
-            </button>
-            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-green-600 text-white rounded-xl shadow-lg hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 font-semibold text-base sm:text-lg">
-              Admissions
-            </button>
+            <Link 
+            to="/courses"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-green-600 rounded-xl shadow-lg hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1 font-semibold text-base sm:text-lg">
+             {content.CTA[0]}
+            </Link>
+            <Link 
+            to="/admission" 
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-green-600 text-white rounded-xl shadow-lg hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 font-semibold text-base sm:text-lg">
+              {content.CTA[1]}
+            </Link>
           </div>
         </div>
       </div>

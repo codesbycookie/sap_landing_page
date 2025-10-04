@@ -1,38 +1,7 @@
 import React from "react";
 
-const Section3 = () => {
-  const features = [
-    {
-      title: "Explore Our Science Courses",
-      description: [
-        "Our 10th-grade foundation courses lay the groundwork for a successful",
-        "Science education. Dive into Physics, Chemistry, Mathematics, and Biology",
-        "to nurture your passion for learning.",
-      ],
-      bg: "#E2F5D0",
-      accentColor: "#4CAF50",
-    },
-    {
-      title: "Advanced Learning Opportunities",
-      description: [
-        "In 11th and 12th grades, students can specialize in their favorite subjects,",
-        "enhancing their understanding and skills. Our expert faculty guide",
-        "students through complex concepts to ensure mastery and confidence.",
-      ],
-      bg: "#E2F5D0",
-      accentColor: "#4CAF50",
-    },
-    {
-      title: "Tailored Support for Success",
-      description: [
-        "We offer personalized learning plans that cater to individual strengths and",
-        "aspirations. Our commitment to student success is reflected in our high",
-        "achievement rates and supportive environment.",
-      ],
-      bg: "#E2F5D0",
-      accentColor: "#4CAF50",
-    },
-  ];
+const Section3 = ({content}) => {
+  const features = content.features;
 
   return (
     <section
@@ -46,7 +15,7 @@ const Section3 = () => {
         <div className="flex-shrink-0 relative w-full lg:max-w-[45%] h-[250px] sm:h-[450px] lg:h-[550px] order-2 lg:order-1">
           <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-xl">
             <img
-              src="/Gallery-2.jpg"
+              src={content.ImgUrl}
               alt="Science Pathway"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               
