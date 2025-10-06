@@ -176,7 +176,7 @@ const Navbar = () => {
                 onClick={handleLinkClick}
                 className="block w-full text-center px-4 py-2 rounded-md bg-gradient-to-r from-green-500 to-green-600 text-white font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md"
               >
-                Admission
+                Login
               </Link>
             </div>
           </div>
