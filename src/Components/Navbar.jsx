@@ -108,7 +108,7 @@ const Navbar = () => {
               to="/contact"
               className="ml-8 px-4 py-2 rounded-md bg-[#8dc540] text-white font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              Admission
+              Login
             </Link>
           </div>
 
