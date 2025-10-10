@@ -52,7 +52,7 @@ const Section1 = ({ content }) => {
       <div className="relative text-center max-w-4xl px-4 md:px-6 z-50">
         <div className="p-6 sm:p-8 md:p-12">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            {content.title}
+            {content.title}<span className="animate-pulse text-[#fac116]">.</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto">
             {content.description}

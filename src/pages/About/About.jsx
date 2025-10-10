@@ -4,7 +4,7 @@ import Section2 from './components/Section2'
 import Section3 from './components/Section3'
 import Section4 from './components/Section4'
 import Section5 from './components/Section5'
-import { AboutPageData } from "../../data/data";
+import { AboutPageData } from "../../utils/data";
 export default function About() {
   const {section1, section2, section3, section4, section5} = AboutPageData;
   return (

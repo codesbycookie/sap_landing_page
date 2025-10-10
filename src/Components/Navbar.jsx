@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IconChevronCompactDown, IconMenu2, IconX } from "@tabler/icons-react";
 
 const Navbar = () => {
@@ -26,7 +26,7 @@ const Navbar = () => {
     { name: "Home", to: "/" },
     { name: "About", to: "/about", hasDropdown: true }, // Dropdown parent
     { name: "Careers", to: "/careers" },
-    // { name: "Blog", to: "/blogs" },
+    { name: "Blog", to: "/blogs" },
     { name: "Contact", to: "/contact" },
   ];
 
@@ -48,12 +48,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link
+            <NavLink
               to="/"
+
               className="text-xl font-bold bg-gradient-to-r from-[#8dc540] to-[#7cbf3a] bg-clip-text text-transparent"
             >
               <img src="/logo.png" alt="" width={100} height={100} />
-            </Link>
+            </NavLink>
           </div>
 
           {/* Desktop Navigation */}
@@ -65,51 +66,61 @@ const Navbar = () => {
                     key={item.name}
                     className="relative group"
                   >
-                    <Link
-                      to={item.to}
-                      className="text-gray-600 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
-                    >
-                      {item.name}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
-                    </Link>
+                    <NavLink
+  key={item.name}
+  to={item.to}
+  className={({ isActive }) =>
+    `relative px-3 py-2 text-sm font-medium transition-colors duration-200 group ${
+      isActive
+        ? "text-green-600 font-semibold after:w-full"
+        : "text-gray-600 hover:text-green-600"
+    } after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-green-600 after:w-0 group-hover:after:w-full after:transition-all after:duration-300`
+  }
+>
+  {item.name}
+</NavLink>
+
+
 
                     {/* Dropdown */}
                     <div className="z-1000 absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform -translate-y-2 transition-all duration-300">
                       <div className="py-2">
-                        {aboutDropdown.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            to={subItem.to}
-                            className="block px-4 py-2 text-sm text-gray-600 hover:bg-green-50 hover:text-green-600 transition-colors"
-                          >
-                            {subItem.name}
-                          </Link>
+                        {aboutDropdown.map((item) => (
+                          <NavLink
+                      to={item.to}
+                      onClick={handleLinkClick}
+                      className="text-gray-600 font-medium block px-3 py-2 text-base hover:text-green-600 transition"
+                    >
+                      {item.name}
+                    </NavLink>
                         ))}
                       </div>
                     </div>
                   </div>
                 ) : (
-                  <Link
+                  <NavLink
                     key={item.name}
                     to={item.to}
                     className="text-gray-600 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
                   >
                     {item.name}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
-                  </Link>
+                  </NavLink>
                 )
               )}
+              
+
             </div>
           </div>
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
-            <Link
-              to="/contact"
+            <NavLink
+              to="/login"
               className="ml-8 px-4 py-2 rounded-md bg-[#8dc540] text-white font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Login
-            </Link>
+            </NavLink>
           </div>
 
           {/* Mobile menu button */}
@@ -139,45 +150,45 @@ const Navbar = () => {
               <div key={item.name}>
                 {item.hasDropdown ? (
                   <>
-                    <Link
+                    <NavLink
                       to={item.to}
                       onClick={handleLinkClick}
                       className="text-gray-600 font-medium block px-3 py-2 text-base hover:text-green-600 transition"
                     >
                       {item.name}
-                    </Link>
+                    </NavLink>
                     <div className="ml-4">
                       {aboutDropdown.map((subItem) => (
-                        <Link
+                        <NavLink
                           key={subItem.name}
                           to={subItem.to}
                           onClick={handleLinkClick}
                           className="block px-3 py-2 text-sm text-gray-600 hover:text-green-600"
                         >
                           {subItem.name}
-                        </Link>
+                        </NavLink>
                       ))}
                     </div>
                   </>
                 ) : (
-                  <Link
+                  <NavLink
                     to={item.to}
                     onClick={handleLinkClick}
                     className="text-gray-600 hover:text-green-600 block px-3 py-2 text-base font-medium transition-colors duration-200 border-l-4 border-transparent hover:border-green-500 hover:bg-green-50 rounded"
                   >
                     {item.name}
-                  </Link>
+                  </NavLink>
                 )}
               </div>
             ))}
             <div className="pt-4">
-              <Link
-                to="/contact"
+              <NavLink
+                to="/login"
                 onClick={handleLinkClick}
                 className="block w-full text-center px-4 py-2 rounded-md bg-gradient-to-r from-green-500 to-green-600 text-white font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md"
               >
                 Login
-              </Link>
+              </NavLink>
             </div>
           </div>
         </div>

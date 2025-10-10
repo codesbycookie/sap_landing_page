@@ -8,12 +8,14 @@ const baseImages = [
   { src: "/Gallery-1.jpg", alt: "Sports activity" },
   { src: "/Gallery-2.jpg", alt: "Award ceremony" },
   { src: "/Gallery-3.jpg", alt: "Campus view" },
+    { src: "/Gallery-1.jpg", alt: "Campus view 2" },
+
 ];
 
 // Generate more images by repeating the base set
 const generateGalleryImages = () => {
   const galleryImages = [];
-  const repetitions = 12; // Total number of images needed
+  const repetitions = 14; // Total number of images needed
   
   for (let i = 0; i < repetitions; i++) {
     const baseImage = baseImages[i % baseImages.length];

@@ -75,11 +75,11 @@ const Section5 = ({content}) => {
 
           {/* Right Column: Two testimonial columns */}
           <div
-            className="w-full lg:w-1/2 min-h-[400px] flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 md:p-10 lg:pr-0"
+            className="w-full lg:w-1/2 min-h-[400px] flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 md:p-10"
           >
             {/* Column 1: Moving Up */}
             <div
-              className="flex-1 overflow-hidden h-[300px] sm:h-[400px]"
+              className="flex-1 overflow-hidden h-[300px] sm:h-[500px]"
             >
               <div
                 className="flex flex-col gap-4 sm:gap-6 animate-scroll-up hover-pause"
@@ -128,7 +128,7 @@ const Section5 = ({content}) => {
 
             {/* Column 2: Moving Down */}
             <div
-              className="flex-1 overflow-hidden h-[300px] sm:h-[400px] hidden sm:block"
+              className="flex-1 overflow-hidden h-[300px] sm:h-[500px] hidden sm:block"
             >
               <div
                 className="flex flex-col gap-4 sm:gap-6 animate-scroll-down hover-pause"

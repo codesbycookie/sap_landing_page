@@ -1,20 +1,17 @@
-import React from 'react'
-import './App.css'
+import React from "react";
+import "./App.css";
 
-import Navbar from '../Components/Navbar'
-import AppRoutes from './AppRoutes'
-import Footer from '../Components/Footer'
+import Navbar from "../Components/Navbar";
+import AppRoutes from "./AppRoutes";
+import Footer from "../Components/Footer";
+import ScrollToTop from "./ScrollToTop";
 function App() {
-
-
   return (
     <>
-      <Navbar />
+      <ScrollToTop />
       <AppRoutes />
-      <Footer />
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;
