@@ -216,14 +216,14 @@ export const CoursesPageData = {
                 subtitle: "A sub-Heading which should cover the whole and goes to second lines",
                 classes: "3 Classes",
                 subjects: "8 Subjects",
-                image: "https://images.unsplash.com/photo-1497636577773-f1231844b336?w=492&h=274&fit=crop"
+                image: "/cbse.webp"
             },
             {
                 title: "State Board TN",
                 subtitle: "A sub-Heading which should cover the whole and goes to second lines",
                 classes: "3 Classes",
                 subjects: "8 Subjects",
-                image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=492&h=274&fit=crop"
+                image: "/Tamil-Nadu.webp"
             }
         ],
         CTA: ["Explore All"]
