@@ -52,8 +52,8 @@ const Footer = () => {
           © 2025 Sampath Academy. All rights reserved.
         </p>
         <div className="flex flex-wrap space-x-6">
-          <Link to="#" className="hover:underline">Privacy Policy</Link>
-          <Link to="#" className="hover:underline">Terms of Service</Link>
+          <Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link>
+          {/* <Link to="#" className="hover:underline">Terms of Service</Link> */}
           <Link to="#" className="hover:underline">Cookies Settings</Link>
         </div>
       </div>
