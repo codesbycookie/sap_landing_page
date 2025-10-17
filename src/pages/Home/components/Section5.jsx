@@ -1,8 +1,32 @@
-import React from 'react';
-import { Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const Section5 = ({content}) => {
+const Section5 = ({ content }) => {
   const testimonials = content.testimonials;
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  // Auto-rotate testimonials on mobile
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isMobile, testimonials.length]);
 
   return (
     <>
@@ -21,13 +45,17 @@ const Section5 = ({content}) => {
         .animate-scroll-down {
           animation: scrollDown 30s linear infinite;
         }
-        @media (max-width: 640px) {
-          .animate-scroll-up, .animate-scroll-down {
-            animation-duration: 40s;
-          }
-        }
         .hover-pause:hover {
           animation-play-state: paused;
+        }
+
+        /* Mobile-specific animations */
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.8s ease-out;
         }
       `}</style>
       
@@ -72,107 +100,187 @@ const Section5 = ({content}) => {
             </div>
           </div>
 
-          {/* Right Column: Two testimonial columns */}
+          {/* Right Column - Different layouts based on screen size */}
           <div
             className="w-full lg:w-1/2 min-h-[350px] xs:min-h-[400px] flex flex-col sm:flex-row gap-3 xs:gap-4 sm:gap-5 md:gap-6 p-4 xs:p-5 sm:p-6 md:p-8 lg:p-10"
           >
-            {/* Column 1: Moving Up */}
-            <div
-              className="flex-1 overflow-hidden h-[280px] xs:h-[300px] sm:h-[350px] md:h-[450px] lg:h-[500px]"
-            >
-              <div
-                className="flex flex-col gap-3 xs:gap-4 sm:gap-5 md:gap-6 animate-scroll-up hover-pause"
-              >
-                {[...testimonials, ...testimonials].map((testimonial, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-3 xs:p-4 sm:p-5 md:p-6 rounded-lg xs:rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-                  >
-                    <div className="flex mb-2 xs:mb-3">
-                      {[...Array(testimonial.stars)].map((_, starIndex) => (
+            {isMobile ? (
+              /* MOBILE LAYOUT: Single testimonial with carousel */
+              <div className="w-full flex flex-col items-center">
+                {/* Current Testimonial */}
+                <div className="w-full max-w-md animate-fade-in">
+                  <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                    <div className="flex mb-4">
+                      {[...Array(testimonials[currentTestimonial].stars)].map((_, starIndex) => (
                         <span
                           key={starIndex}
-                          className="text-sm xs:text-base sm:text-lg md:text-xl text-black mr-1"
+                          className="text-lg text-black mr-1"
                         >
                           ★
                         </span>
                       ))}
                     </div>
-                    <p
-                      className="text-xs xs:text-sm md:text-base text-gray-600 leading-relaxed mb-2 xs:mb-3 sm:mb-4 urbanist-400"
-                    >
-                      {testimonial.text}
+                    <p className="text-gray-600 leading-relaxed mb-4 urbanist-400 text-base">
+                      "{testimonials[currentTestimonial].text}"
                     </p>
                     <div className="flex items-center">
-                      <div
-                        className="w-7 xs:w-8 sm:w-9 md:w-10 h-7 xs:h-8 sm:h-9 md:h-10 rounded-full bg-gray-200 mr-2 xs:mr-3 flex items-center justify-center"
-                      >
-                        <span className="text-gray-500 text-xs xs:text-sm font-bold">
-                          {testimonial.name.charAt(0)}
+                      <div className="w-12 h-12 rounded-full bg-gray-200 mr-4 flex items-center justify-center">
+                        <span className="text-gray-500 text-sm font-bold">
+                          {testimonials[currentTestimonial].name.charAt(0)}
                         </span>
                       </div>
                       <div>
-                        <strong className="text-xs xs:text-sm sm:text-base font-semibold text-gray-900 urbanist-600 block">
-                          {testimonial.name}
+                        <strong className="text-base font-semibold text-gray-900 urbanist-600 block">
+                          {testimonials[currentTestimonial].name}
                         </strong>
-                        <p className="text-xs xs:text-sm text-gray-500 urbanist-400">
-                          {testimonial.position}
+                        <p className="text-sm text-gray-500 urbanist-400">
+                          {testimonials[currentTestimonial].position}
                         </p>
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
 
-            {/* Column 2: Moving Down */}
-            <div
-              className="flex-1 overflow-hidden h-[280px] xs:h-[300px] sm:h-[350px] md:h-[450px] lg:h-[500px] hidden sm:block"
-            >
-              <div
-                className="flex flex-col gap-3 xs:gap-4 sm:gap-5 md:gap-6 animate-scroll-down hover-pause"
-              >
-                {[...testimonials, ...testimonials].map((testimonial, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-3 xs:p-4 sm:p-5 md:p-6 rounded-lg xs:rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                {/* Carousel Indicators */}
+                <div className="flex justify-center mt-6 space-x-2">
+                  {testimonials.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentTestimonial(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentTestimonial ? 'bg-[#8dc540] w-6' : 'bg-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                {/* Navigation Arrows */}
+                <div className="flex justify-center mt-4 space-x-4">
+                  <button
+                    onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+                    className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-200"
                   >
-                    <div className="flex mb-2 xs:mb-3">
-                      {[...Array(testimonial.stars)].map((_, starIndex) => (
-                        <span
-                          key={starIndex}
-                          className="text-sm xs:text-base sm:text-lg md:text-xl text-black mr-1"
-                        >
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                    <p
-                      className="text-xs xs:text-sm md:text-base text-gray-600 leading-relaxed mb-2 xs:mb-3 sm:mb-4 urbanist-400"
-                    >
-                      {testimonial.text}
-                    </p>
-                    <div className="flex items-center">
-                      <div
-                        className="w-7 xs:w-8 sm:w-9 md:w-10 h-7 xs:h-8 sm:h-9 md:h-10 rounded-full bg-gray-200 mr-2 xs:mr-3 flex items-center justify-center"
-                      >
-                        <span className="text-gray-500 text-xs xs:text-sm font-bold">
-                          {testimonial.name.charAt(0)}
-                        </span>
-                      </div>
-                      <div>
-                        <strong className="text-xs xs:text-sm sm:text-base font-semibold text-gray-900 urbanist-600 block">
-                          {testimonial.name}
-                        </strong>
-                        <p className="text-xs xs:text-sm text-gray-500 urbanist-400">
-                          {testimonial.position}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+                    className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-200"
+                  >
+                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* View All Button */}
+                <button className="mt-6 bg-[#8dc540] hover:bg-[#7bb532] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 urbanist-600 text-sm">
+                  View All Testimonials ({testimonials.length})
+                </button>
               </div>
-            </div>
+            ) : (
+              /* DESKTOP/TABLET LAYOUT: Original dual columns */
+              <>
+                {/* Column 1: Moving Up */}
+                <div
+                  className="flex-1 overflow-hidden h-[280px] xs:h-[300px] sm:h-[350px] md:h-[450px] lg:h-[500px]"
+                >
+                  <div
+                    className="flex flex-col gap-3 xs:gap-4 sm:gap-5 md:gap-6 animate-scroll-up hover-pause"
+                  >
+                    {[...testimonials, ...testimonials].map((testimonial, index) => (
+                      <div
+                        key={index}
+                        className="bg-white p-3 xs:p-4 sm:p-5 md:p-6 rounded-lg xs:rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                      >
+                        <div className="flex mb-2 xs:mb-3">
+                          {[...Array(testimonial.stars)].map((_, starIndex) => (
+                            <span
+                              key={starIndex}
+                              className="text-sm xs:text-base sm:text-lg md:text-xl text-black mr-1"
+                            >
+                              ★
+                            </span>
+                          ))}
+                        </div>
+                        <p
+                          className="text-xs xs:text-sm md:text-base text-gray-600 leading-relaxed mb-2 xs:mb-3 sm:mb-4 urbanist-400"
+                        >
+                          {testimonial.text}
+                        </p>
+                        <div className="flex items-center">
+                          <div
+                            className="w-7 xs:w-8 sm:w-9 md:w-10 h-7 xs:h-8 sm:h-9 md:h-10 rounded-full bg-gray-200 mr-2 xs:mr-3 flex items-center justify-center"
+                          >
+                            <span className="text-gray-500 text-xs xs:text-sm font-bold">
+                              {testimonial.name.charAt(0)}
+                            </span>
+                          </div>
+                          <div>
+                            <strong className="text-xs xs:text-sm sm:text-base font-semibold text-gray-900 urbanist-600 block">
+                              {testimonial.name}
+                            </strong>
+                            <p className="text-xs xs:text-sm text-gray-500 urbanist-400">
+                              {testimonial.position}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Column 2: Moving Down */}
+                <div
+                  className="flex-1 overflow-hidden h-[280px] xs:h-[300px] sm:h-[350px] md:h-[450px] lg:h-[500px] hidden sm:block"
+                >
+                  <div
+                    className="flex flex-col gap-3 xs:gap-4 sm:gap-5 md:gap-6 animate-scroll-down hover-pause"
+                  >
+                    {[...testimonials, ...testimonials].map((testimonial, index) => (
+                      <div
+                        key={index}
+                        className="bg-white p-3 xs:p-4 sm:p-5 md:p-6 rounded-lg xs:rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                      >
+                        <div className="flex mb-2 xs:mb-3">
+                          {[...Array(testimonial.stars)].map((_, starIndex) => (
+                            <span
+                              key={starIndex}
+                              className="text-sm xs:text-base sm:text-lg md:text-xl text-black mr-1"
+                            >
+                              ★
+                            </span>
+                          ))}
+                        </div>
+                        <p
+                          className="text-xs xs:text-sm md:text-base text-gray-600 leading-relaxed mb-2 xs:mb-3 sm:mb-4 urbanist-400"
+                        >
+                          {testimonial.text}
+                        </p>
+                        <div className="flex items-center">
+                          <div
+                            className="w-7 xs:w-8 sm:w-9 md:w-10 h-7 xs:h-8 sm:h-9 md:h-10 rounded-full bg-gray-200 mr-2 xs:mr-3 flex items-center justify-center"
+                          >
+                            <span className="text-gray-500 text-xs xs:text-sm font-bold">
+                              {testimonial.name.charAt(0)}
+                            </span>
+                          </div>
+                          <div>
+                            <strong className="text-xs xs:text-sm sm:text-base font-semibold text-gray-900 urbanist-600 block">
+                              {testimonial.name}
+                            </strong>
+                            <p className="text-xs xs:text-sm text-gray-500 urbanist-400">
+                              {testimonial.position}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
