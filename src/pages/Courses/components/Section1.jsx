@@ -20,49 +20,40 @@ const Section1 = ({ content }) => {
         {/* Course Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {courses.map((course, index) => (
-            <div key={index} className="flex flex-col">
+            <div key={index} className="flex flex-col group">
               {/* Card */}
               <div
-                className="rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 flex-1"
+                className="rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02] flex-1 border border-gray-100"
                 style={{ backgroundColor: '#E2F5D0' }}
               >
                 {/* Card with Image and Content */}
-                <div className="p-6">
-                  {/* Image Section */}
+                <div className="p-4 sm:p-6">
+                  {/* Image Section - Fixed to fit container */}
                   <div className="relative mb-6">
-                    <div 
-                      className="rounded-2xl overflow-hidden"
-                      style={{
-                        width: '492px',
-                        height: '274px',
-                        marginTop: '24px',
-                        marginLeft: '24px'
-                      }}
-                    >
-                      {/* Image Tag */}
+                    <div className="rounded-2xl overflow-hidden bg-gray-100 aspect-video w-full">
                       <img 
                         src={course.image} 
                         alt={course.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   </div>
 
                   {/* Text Content Section */}
-                  <div className="px-6 pb-6">
+                  <div className="px-2 sm:px-4 pb-4 sm:pb-6">
                     {/* Course Title - Bold Text */}
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                       {course.title}
                     </h3>
                     
                     {/* Subtitle */}
-                    <p className="text-gray-700 mb-4 leading-relaxed text-base">
+                    <p className="text-gray-700 mb-4 leading-relaxed text-sm sm:text-base line-clamp-2">
                       {course.subtitle}
                     </p>
                     
                     {/* Classes and Subjects */}
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-base font-semibold text-gray-900">
+                      <span className="text-sm sm:text-base font-semibold text-gray-900">
                         {course.classes} | {course.subjects}
                       </span>
                     </div>
@@ -71,10 +62,10 @@ const Section1 = ({ content }) => {
               </div>
 
               {/* Explore Button - Outside the card */}
-              <button className="mt-4 w-full bg-[#8dc540] hover:bg-[#8dc540]/90 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-200 flex items-center justify-center text-lg">
+              <button className="mt-4 w-full bg-[#8dc540] hover:bg-[#7bb532] text-white font-semibold py-3 sm:py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center text-base sm:text-lg hover:shadow-lg hover:scale-[1.02] active:scale-95">
                 {content.CTA[0]}
                 <svg
-                  className="w-5 h-5 ml-3"
+                  className="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3 transition-transform group-hover:translate-x-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
