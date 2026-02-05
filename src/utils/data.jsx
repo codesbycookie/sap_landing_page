@@ -13,7 +13,7 @@ export const HomePageData = {
         ],
     },
     section3: {
-        ImgUrl: "/Gallery-2.jpg",
+        ImgUrl: "/Photo-2.jpeg",
         features: [
             {
                 title: "Comprehensive Curriculum",
@@ -56,7 +56,7 @@ export const HomePageData = {
         title: "What Our Students Say",
         description: "Hear from our students about their experiences and successes at Sampath Academy. Their stories inspire us to continue delivering exceptional education.",
         CTA: "Know More",
-        ImgUrl: "/Gallery-1.jpg",
+        ImgUrl: "/Photo.jpeg",
         testimonials: [
             {
                 name: 'Priya Krishnan',
@@ -93,7 +93,7 @@ export const HomePageData = {
 }
 export const AboutPageData = {
     section1: {
-        ImgUrl: "/Gallery-3.jpg",
+        ImgUrl: "/Award.jpeg",
         title: ["Discover Sampath", "Academy"],
         description: "A Legacy of Educational Excellence Since 1985 - Nurturing Young Minds in Kolathur, Chennai",
         CTA: ["Explore Courses", "Join as Staff"]
@@ -186,7 +186,7 @@ export const AboutPageData = {
                 {
                     role: "Founder",
                     name: "Sampath Kumar",
-                    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=300&fit=crop",
+                    img: "Sampath.jpeg",
                     badgeColor: "bg-lime-500",
                     textColor: "text-lime-600",
                     desc: "Founded Sampath Academy in 1985 with a vision to excel in physics education. His dedication and expertise laid the foundation for our institution's success, producing numerous centum scorers and inspiring generations of students.",
@@ -195,7 +195,7 @@ export const AboutPageData = {
                 {
                     role: "Co-Founder",
                     name: "Akilesh Sampath",
-                    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=300&fit=crop",
+                    img: "Photo.jpeg",
                     badgeColor: "bg-green-500",
                     textColor: "text-green-600",
                     desc: "Leading the institution since 2016, Mr. Akilesh combines management excellence with passionate teaching. His expertise in Mathematics and commitment to student success continues the legacy of educational excellence.",
