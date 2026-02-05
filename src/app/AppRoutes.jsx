@@ -10,6 +10,7 @@ import Error from "../pages/Error404/Error";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import BuildingExperience from "../pages/BuildingExperience/BuildingExperience";
+import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 
 const Layout = ({ children }) => {
   return <div className="min-h-screen bg-gray-100">{children}</div>;
@@ -50,6 +51,14 @@ export default function AppRoutes() {
           element={
             <NavbarFooterWrapper>
               <Courses />
+            </NavbarFooterWrapper>
+          }
+        />
+        <Route
+          path="/privacy-policy"
+          element={
+            <NavbarFooterWrapper>
+              <PrivacyPolicy />
             </NavbarFooterWrapper>
           }
         />
