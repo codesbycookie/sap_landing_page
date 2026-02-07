@@ -2,7 +2,7 @@ export const HomePageData = {
     section1: {
         title: "Welcome to Sampath Academy",
         description: "Excellence in Education Since 1985 | Best Tuition Centre in Kolathur",
-        CTA: ["Explore Courses", "Admission"]
+        CTA: ["Explore Courses", "Contact Us"]
     },
     section2: {
         title: "The Legacy We Built Over Years",
@@ -237,7 +237,7 @@ export const CoursesPageData = {
                     id: 1,
                     name: "Raul Roshan",
                     class: "11th State board, 2021-2022",
-                    image: "/profileicon.jpg",
+                    image: "/Student_img.png",
                     subjects: [
                         { name: "Physics", score: "98 / 100" },
                         { name: "Chemistry", score: "100 / 100" },
@@ -248,7 +248,7 @@ export const CoursesPageData = {
                     id: 2,
                     name: "Priya Sharma",
                     class: "12th State board, 2021-2022",
-                    image: "/profileicon.jpg",
+                    image: "/Student_img.png",
                     subjects: [
                         { name: "Physics", score: "92 / 100" },
                         { name: "Chemistry", score: "100 / 100" },
@@ -259,7 +259,7 @@ export const CoursesPageData = {
                     id: 3,
                     name: "Arjun Kumar",
                     class: "10th CBSE, 2021-2022",
-                    image: "/profileicon.jpg",
+                    image: "/Student_img.png",
                     subjects: [
                         { name: "Physics", score: "99 / 100" },
                         { name: "Chemistry", score: "100 / 100" },
@@ -270,7 +270,7 @@ export const CoursesPageData = {
                     id: 4,
                     name: "Ravi Krishnan",
                     class: "10th State board, 2021-2022",
-                    image: "/profileicon.jpg",
+                    image: "/Student_img.png",
                     subjects: [
                         { name: "Physics", score: "96 / 100" },
                         { name: "Chemistry", score: "95 / 100" },
@@ -281,7 +281,7 @@ export const CoursesPageData = {
                     id: 5,
                     name: "RajKaran P",
                     class: "11th State board, 2021-2022",
-                    image: "/profileicon.jpg",
+                    image: "/Student_img.png",
                     subjects: [
                         { name: "Physics", score: "98 / 100" },
                         { name: "Chemistry", score: "100 / 100" },
@@ -292,7 +292,7 @@ export const CoursesPageData = {
                     id: 6,
                     name: "Sneha Reddy",
                     class: "12th State board, 2022-2023",
-                    image: "/profileicon.jpg",
+                    image: "/Student_img.png",
                     subjects: [
                         { name: "Physics", score: "98 / 100" },
                         { name: "Chemistry", score: "97 / 100" },

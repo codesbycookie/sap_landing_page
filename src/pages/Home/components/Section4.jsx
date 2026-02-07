@@ -26,14 +26,14 @@ const Section4 = ({ content }) => {
 
           {/* Right Content: Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-            <Link
+            {/* <Link
             to="/admission" 
             className="px-6 sm:px-8 py-3 sm:py-4 bg-[#8dc540] text-black font-medium rounded-lg hover:bg-[#5EBF0F] hover:text-[#fff] transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
               {content.CTA[0]}
-            </Link>
+            </Link> */}
             <Link
               to="/contact"
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-300 text-black font-medium rounded-lg hover:bg-gray-400 transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-black text-white font-medium rounded-lg hover:bg-transparent border border-black hover:text-black transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
               {content.CTA[1]}
             </Link>
           </div>

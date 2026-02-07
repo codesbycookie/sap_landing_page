@@ -51,7 +51,7 @@ const Navbar = () => {
             <NavLink
               to="/"
 
-              className="text-xl font-bold bg-gradient-to-r from-[#8dc540] to-[#7cbf3a] bg-clip-text text-transparent"
+              className="text-xl font-semibold bg-gradient-to-r from-[#8dc540] to-[#7cbf3a] bg-clip-text text-transparent"
             >
               <img src="/logo.png" alt="" width={100} height={100} />
             </NavLink>
@@ -70,7 +70,7 @@ const Navbar = () => {
   key={item.name}
   to={item.to}
   className={({ isActive }) =>
-    `relative px-3 py-2 text-sm font-medium transition-colors duration-200 group ${
+    `relative px-3 py-2 text-md font-semibold transition-colors duration-200 group ${
       isActive
         ? "text-green-600 font-semibold after:w-full"
         : "text-gray-600 hover:text-green-600"
@@ -89,7 +89,7 @@ const Navbar = () => {
                           <NavLink
                       to={item.to}
                       onClick={handleLinkClick}
-                      className="text-gray-600 font-medium block px-3 py-2 text-base hover:text-green-600 transition"
+                      className="text-gray-600 font-semibold block px-3 py-2 text-lg hover:text-green-600 transition"
                     >
                       {item.name}
                     </NavLink>
@@ -101,7 +101,7 @@ const Navbar = () => {
                   <NavLink
                     key={item.name}
                     to={item.to}
-                    className="text-gray-600 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
+                    className="text-gray-600 hover:text-green-600 px-3 py-2 text-md font-semibold transition-colors duration-200 relative group"
                   >
                     {item.name}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
@@ -115,12 +115,12 @@ const Navbar = () => {
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
-            <NavLink
-              to="/login"
-              className="ml-8 px-4 py-2 rounded-md bg-[#8dc540] text-white font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md hover:shadow-lg"
+            <a
+              href="https://app.sampathacademy.in"
+              className="ml-8 px-4 py-2 rounded-md bg-[#8dc540] text-white font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              Login
-            </NavLink>
+              Student Login
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -153,7 +153,7 @@ const Navbar = () => {
                     <NavLink
                       to={item.to}
                       onClick={handleLinkClick}
-                      className="text-gray-600 font-medium block px-3 py-2 text-base hover:text-green-600 transition"
+                      className="text-gray-600 font-semibold block px-3 py-2 text-base hover:text-green-600 transition"
                     >
                       {item.name}
                     </NavLink>
@@ -163,7 +163,7 @@ const Navbar = () => {
                           key={subItem.name}
                           to={subItem.to}
                           onClick={handleLinkClick}
-                          className="block px-3 py-2 text-sm text-gray-600 hover:text-green-600"
+                          className="block px-3 py-2 text-md text-gray-600 hover:text-green-600"
                         >
                           {subItem.name}
                         </NavLink>
@@ -174,7 +174,7 @@ const Navbar = () => {
                   <NavLink
                     to={item.to}
                     onClick={handleLinkClick}
-                    className="text-gray-600 hover:text-green-600 block px-3 py-2 text-base font-medium transition-colors duration-200 border-l-4 border-transparent hover:border-green-500 hover:bg-green-50 rounded"
+                    className="text-gray-600 hover:text-green-600 block px-3 py-2 text-base font-semibold transition-colors duration-200 border-l-4 border-transparent hover:border-green-500 hover:bg-green-50 rounded"
                   >
                     {item.name}
                   </NavLink>
@@ -182,13 +182,12 @@ const Navbar = () => {
               </div>
             ))}
             <div className="pt-4">
-              <NavLink
-                to="/login"
-                onClick={handleLinkClick}
-                className="block w-full text-center px-4 py-2 rounded-md bg-gradient-to-r from-green-500 to-green-600 text-white font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md"
+              <a
+                href="https://app.sampathacademy.in"
+                className="block w-full text-center px-4 py-2 rounded-md bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md"
               >
-                Login
-              </NavLink>
+                Student Login
+              </a>
             </div>
           </div>
         </div>
