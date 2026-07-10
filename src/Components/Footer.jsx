@@ -49,7 +49,7 @@ const Footer = () => {
 
       <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between text-sm text-gray-700">
         <p className="mb-2 md:mb-0">
-          © 2025 Sampath Academy. All rights reserved.
+          © 2026 Sampath Academy. All rights reserved.
         </p>
         <div className="flex flex-wrap space-x-6">
           <Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link>
