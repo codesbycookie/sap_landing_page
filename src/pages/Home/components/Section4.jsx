@@ -3,39 +3,31 @@ import { Link } from "react-router-dom";
 
 const Section4 = ({ content }) => {
   return (
-    <section className="relative w-full min-h-[200px] sm:min-h-[250px] md:min-h-[300px] flex items-center justify-center bg-white py-16 sm:py-20 md:py-24">
-      {/* Card */}
-      <div
-        className="rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl mx-4 sm:mx-6 md:mx-8"
-        style={{
-          width: "100%",
-          maxWidth: "1280px",
-          backgroundColor: "#E2F5D0",
-        }}
-      >
-        <div className="flex flex-col lg:flex-row items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-10 md:py-12 gap-6 sm:gap-8">
-          {/* Left Content: Heading + Subtext */}
-          <div className="flex flex-col text-center lg:text-left w-full lg:w-auto">
-            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 urbanist-700">
-              {content.title}
-            </h3>
-            <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl urbanist-400 leading-relaxed">
-              {content.description}
-            </p>
-          </div>
+    <section className="w-full py-16 sm:py-20 md:py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="relative rounded-3xl overflow-hidden bg-[#E2F5D0] shadow-xl">
+          {/* Soft decorative circles */}
+          <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-[#8dc540]/15"></div>
+          <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#8dc540]/10"></div>
 
-          {/* Right Content: Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-            {/* <Link
-            to="/admission" 
-            className="px-6 sm:px-8 py-3 sm:py-4 bg-[#8dc540] text-black font-medium rounded-lg hover:bg-[#5EBF0F] hover:text-[#fff] transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
-              {content.CTA[0]}
-            </Link> */}
-            <Link
-              to="/contact"
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-black text-white font-medium rounded-lg hover:bg-transparent border border-black hover:text-black transition-all duration-300 transform hover:scale-105 urbanist-600 text-sm sm:text-base">
-              {content.CTA[1]}
-            </Link>
+          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8 px-8 sm:px-12 lg:px-16 py-12 sm:py-14">
+            <div className="text-center lg:text-left max-w-2xl">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+                {content.title}
+              </h3>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                {content.description}
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-black text-white font-semibold rounded-2xl hover:bg-gray-900 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl text-center"
+              >
+                {content.CTA[1]}
+              </Link>
+            </div>
           </div>
         </div>
       </div>

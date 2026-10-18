@@ -1,87 +1,46 @@
 import React from "react";
 
-const Section3 = ({content}) => {
+const Section3 = ({ content }) => {
   const features = content.features;
 
   return (
-    <section
-      className="relative flex items-center justify-center w-full min-h-screen py-12 lg:py-20"
-      style={{ backgroundColor: "#F8FDF4" }}
-    >
-      {/* Main Content Container */}
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+    <section className="relative w-full py-16 lg:py-24 bg-[#F8FDF4]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         
-        {/* Left Image Section */}
-        <div className="flex-shrink-0 relative w-full lg:max-w-[45%] h-[250px] sm:h-[450px] lg:h-[550px] order-2 lg:order-1">
-          <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-xl">
+        {/* Image */}
+        <div className="w-full lg:w-[45%] flex-shrink-0 order-2 lg:order-1">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-[3/4]">
             <img
               src={content.ImgUrl}
               alt="Science Pathway"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              
             />
-            {/* Gradient Overlay */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "linear-gradient(45deg, rgba(76, 175, 80, 0.08), rgba(33, 150, 243, 0.08))",
-              }}
-            ></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
           </div>
         </div>
 
-        {/* Right Cards Section */}
-        <div className="flex flex-col gap-6 w-full lg:min-w-[50%] order-1 lg:order-2">
+        {/* Feature Cards */}
+        <div className="w-full lg:w-[55%] flex flex-col gap-5 order-1 lg:order-2">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="relative rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer border border-gray-100"
-              style={{
-                backgroundColor: feature.bg,
-                minHeight: "140px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.12)";
-                e.currentTarget.style.borderLeft = `4px solid ${feature.accentColor}`;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)";
-                e.currentTarget.style.borderLeft = "4px solid transparent";
-              }}
+              className="group relative rounded-2xl p-6 sm:p-7 bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
             >
-              {/* Accent Bar */}
-              <div 
-                className="absolute left-0 top-0 bottom-0 w-1 rounded-l-xl transition-all duration-300"
+              {/* Accent bar */}
+              <div
+                className="absolute left-0 top-5 bottom-5 w-1.5 rounded-full transition-all duration-300 group-hover:w-2"
                 style={{ backgroundColor: feature.accentColor }}
               ></div>
-              
-              {/* Card Content */}
-              <div className="pl-4">
-                {/* Card Header */}
-                <div className="mb-3">
-                  <h3
-                    className="text-xl font-bold text-gray-900 leading-tight urbanist-700"
-                    style={{ 
-                      lineHeight: "1.3",
-                    }}
-                  >
-                    {feature.title}
-                  </h3>
-                </div>
 
-                {/* Description */}
-                <div className="space-y-1">
+              <div className="pl-5">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 leading-snug">
+                  {feature.title}
+                </h3>
+                <div className="space-y-1.5">
                   {feature.description.map((paragraph, idx) => (
                     <p
                       key={idx}
-                      className="text-gray-600 leading-relaxed urbanist-400"
-                      style={{ 
-                        fontSize: "0.95rem", 
-                        lineHeight: "1.5",
-                      }}
+                      className="text-gray-600 text-[0.95rem] leading-relaxed"
                     >
                       {paragraph}
                     </p>
